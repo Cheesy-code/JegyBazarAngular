@@ -11,8 +11,8 @@ import { EventListComponent } from "./event/event-list/event-list.component";
 import { EventDetailComponent } from "./event/event-detail/event-detail.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ProfileEditComponent } from "./profile-edit/profile-edit.component";
-import { TicketListComponent } from "./ticket-list/ticket-list.component";
-import { TicketDetailComponent } from "./ticket-detail/ticket-detail.component";
+import { TicketListComponent } from "./ticket/ticket-list/ticket-list.component";
+import { TicketDetailComponent } from "./ticket/ticket-detail/ticket-detail.component";
 import { BidComponent } from "./bid/bid.component";
 
 const routes: Routes = [
@@ -32,7 +32,7 @@ const routes: Routes = [
     children: [
       { path: 'list', component: TicketListComponent },
       { path: 'new', component: TicketDetailComponent },
-      { path: ':id/bid', component: TicketDetailComponent }
+      { path: ':id', component: TicketDetailComponent }
     ]
   },
   { path: 'about', component: AboutComponent },  
