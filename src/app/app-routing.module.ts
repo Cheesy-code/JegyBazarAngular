@@ -13,6 +13,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { ProfileEditComponent } from "./profile-edit/profile-edit.component";
 import { TicketListComponent } from "./ticket-list/ticket-list.component";
 import { TicketDetailComponent } from "./ticket-detail/ticket-detail.component";
+import { BidComponent } from "./bid/bid.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     component: TicketComponent,
     children: [
       { path: 'list', component: TicketListComponent },
-      { path: 'detail', component: TicketDetailComponent }
+      { path: 'new', component: TicketDetailComponent },
+      { path: ':id/bid', component: TicketDetailComponent }
     ]
   },
   { path: 'about', component: AboutComponent },
