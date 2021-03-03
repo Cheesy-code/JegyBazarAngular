@@ -32,7 +32,7 @@ const routes: Routes = [
     children: [
       { path: 'list', component: TicketListComponent },
       { path: 'new', component: TicketDetailComponent },
-      { path: ':id', component: TicketDetailComponent }
+      { path: ':id/bid', component: BidComponent }
     ]
   },
   { path: 'about', component: AboutComponent },  
@@ -63,6 +63,7 @@ export class AppRoutingModule {
     TicketComponent,
     TicketListComponent,
     TicketDetailComponent,
+    BidComponent,
     AboutComponent,
     LoginComponent,
     RegistrationComponent,

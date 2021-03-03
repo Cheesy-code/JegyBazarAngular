@@ -50,7 +50,7 @@
 
             <div class="form-group">
                 <label for="text">Település</label>
-                <select class="form-control mb-3">
+                <select class="form-control mb-3" id="text">
                     <option>Főváros</option>
                     <option>Nagyváros</option>
                     <option>Kistelepülés</option>
@@ -66,14 +66,11 @@
                 <label for="jelszo2">Jelszó ismét</label>
                 <input type="password" class="form-control mb-3" id="jelszo2" placeholder="Jelszó ismét">
             </div>
-
         </div>
 
         <div class="text-center mb-3">
-            <input class="btn btn-primary btn-lg" type="submit" [routerLink]="['../']"
+            <input class="btn btn-primary btn-lg" type="submit" routerLink="/user"
                 routerLinkActive="router-link-active" value="mentés">
         </div>
-
     </div>
-
 </div>
