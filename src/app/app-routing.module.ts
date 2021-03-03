@@ -4,7 +4,7 @@ import { AboutComponent } from "./about/about.component";
 import { EventComponent } from "./event/event.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
 import { RegistrationComponent } from "./registration/registration.component";
 import { TicketComponent } from "./ticket/ticket.component";
 import { EventListComponent } from "./event/event-list/event-list.component";
@@ -13,7 +13,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { ProfileEditComponent } from "./profile-edit/profile-edit.component";
 import { TicketListComponent } from "./ticket/ticket-list/ticket-list.component";
 import { TicketDetailComponent } from "./ticket/ticket-detail/ticket-detail.component";
-import { BidComponent } from "./bid/bid.component";
+import { BidComponent } from "./ticket/bid/bid.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
