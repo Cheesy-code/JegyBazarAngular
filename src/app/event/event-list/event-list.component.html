@@ -15,13 +15,21 @@
             <label>Eseményt szeretnék létrehozni</label>
         </div>
         <div class="w-100"></div>
-        <div><a routerLink = "../new" class="btn btn-primary" role="button">Új esemény léterhozása</a></div>
+        <div><a routerLink="../new" class="btn btn-primary" role="button">Új esemény 
+            léterhozása</a></div>
     </div>
 
 </div>
 
 <div class="card-deck">
-    <div class="card-deck pt-5 pb-5">
+    <app-eventcard  class="col col-md-6 col-lg-4" 
+                    *ngFor="let ev of events"
+                    [esemeny]='ev'
+    
+        ></app-eventcard>
+
+    <!-- <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard> -->
+    <!-- <div class="card-deck pt-5 pb-5">
         <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
         <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
         <app-eventcard class="col col-md-6 col-lg-4 mx-auto"></app-eventcard>
@@ -37,7 +45,5 @@
         <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
         <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
         <app-eventcard class="col col-md-6 col-lg-4 mx-auto"></app-eventcard>
-    </div>
-
-
+    </div> -->
 </div>
