@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EventModel } from 'src/app/shared/event-model';
-import { EventService } from 'src/app/shared/event.service';
+import { EventModel } from '../../shared/event-model';
+import { EventService } from '../../shared/event.service';
 
 @Component({
   selector: 'app-event-list',
@@ -8,16 +8,23 @@ import { EventService } from 'src/app/shared/event.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-//Ez jó példa lehet smart és dumb componentre.
-
-  public events!: EventModel[];
+// ez jo pelda lehet smart es dumb componentre
+  public eventsGrouppedBy3 = <any>EventModel;
 
   constructor(private _eventService: EventService) {
-    this.events = this._eventService.getAllEvents();
-    console.log(this.events);
-   }
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // ind!! [0,1,2,3,4,5,6,7,8] -- reduce --> [[0,1,2],[3,4,5],[6,7,8]]
+    this.eventsGrouppedBy3 = this._eventService.getAllEvents()
+      .reduce((acc: any, curr: EventModel, ind: number) => {
+        if (ind % 3 === 0) {
+          acc.push([]);
+        }
+        acc[acc.length - 1].push(curr);
+        return acc;
+      }, []);
+    console.log(this.eventsGrouppedBy3);
   }
 
 }

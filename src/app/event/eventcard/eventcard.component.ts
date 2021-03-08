@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EventModel } from 'src/app/shared/event-model';
+import { EventModel } from '../../shared/event-model';
 
 @Component({
   selector: 'app-eventcard',
@@ -11,7 +11,7 @@ export class EventcardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

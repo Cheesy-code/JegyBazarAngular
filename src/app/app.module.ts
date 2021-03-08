@@ -10,6 +10,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { JumbotronComponent } from './core/jumbotron/jumbotron.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { EventService } from './shared/event.service';
+import { UserService } from './shared/user.service';
 
 
 @NgModule({
@@ -20,7 +21,6 @@ import { EventService } from './shared/event.service';
     EventcardComponent,
     FooterComponent,
     ...AppRoutingModule.routableComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { EventService } from './shared/event.service';
     CollapseModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [EventService],
+  providers: [EventService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
