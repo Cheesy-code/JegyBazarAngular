@@ -1,19 +1,19 @@
 export class UserModel {
-    id!: number;
-    name!: string;
-    email!: string;
-    address!: string;
-    dateOfBirth!: string;
-    gender!: string;
+    id: number | undefined;
+    name: string | undefined;
+    email: string | undefined;
+    address: string | undefined;
+    dateOfBirth: string | undefined;
+    gender: string | undefined;
 
     constructor(param?: UserModel) {
         if (param) {
             Object.assign(this, param);
         }
-        
+
     }
     static get exampleUser(): UserModel {
-        return{ 
+        return {
             id: 0,
             name: 'Legyek Réka Matilda',
             email: 'legyekrekamatilda@valami.com',

@@ -7,7 +7,7 @@ import { UserModel } from './user-model';
 })
 export class UserService {
   isLoggedin = false;
-  private _user = <any>UserModel;
+  private _user : UserModel | undefined;
 
   constructor(private _router: Router) { }
 
