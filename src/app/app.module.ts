@@ -11,6 +11,7 @@ import { JumbotronComponent } from './core/jumbotron/jumbotron.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { EventService } from './shared/event.service';
 import { UserService } from './shared/user.service';
+import { TicketService } from './shared/ticket.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { UserService } from './shared/user.service';
     AlertModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [EventService, UserService],
+  providers: [TicketService, EventService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

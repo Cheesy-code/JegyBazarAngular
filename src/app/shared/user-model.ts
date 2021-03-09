@@ -19,7 +19,18 @@ export class UserModel {
             email: 'legyekrekamatilda@valami.com',
             address: 'Futrinka utca',
             dateOfBirth: '2001.01.01',
-            gender: 'male'
+            gender: 'female'
         }
+    }
+
+    static get emptyUser(): UserModel {
+        return {
+            id: 0,
+            name: '',
+            email: '',
+            address: '',
+            dateOfBirth: '',
+            gender: ''
+        };
     }
 }
