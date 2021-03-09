@@ -1,5 +1,5 @@
 export class EventModel {
-    id: number | undefined;
+    id?: number;
     name: string | undefined;
     date: string | undefined;
     pictureURL: string | undefined;
@@ -14,7 +14,6 @@ export class EventModel {
 
     static get emptyEvent() {
         return {
-          'id': 0,
           'name': '',
           'date': '',
           'pictureURL': '',
