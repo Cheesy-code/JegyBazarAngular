@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private _router: Router) { }
 
-  loggin(email: string, password: string): boolean {
+  login(email: string, password: string): boolean {
     if (email == 'angular' && password == 'angular') {
       this._user = new UserModel(UserModel.exampleUser);
       this.isLoggedin = true;
