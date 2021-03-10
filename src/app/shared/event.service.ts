@@ -5,7 +5,7 @@ import { EventModel } from './event-model';
   providedIn: 'root'
 })
 export class EventService {
-  private _events: EventModel[];
+  private _events = <any>EventModel;
 
   constructor() {
     this._events = [
@@ -76,12 +76,29 @@ export class EventService {
   }
 
   getAllEvents(): EventModel[] {
-      return this._events;
+    return this._events;
   }
 
   getEventById(id: number) {
-    const ev = this._events.filter(x => x.id === id);
+    const ev = this._events.filter((x: { id: number; }) => x.id === id);
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
 
+  update(param: EventModel) {
+    this._events = this._events.map((ev: { id: number; }) => ev.id === param.id ? {...param} : ev);
+  }
+
+  create(param: EventModel) {
+    this._events = [
+      ...this._events,
+      {
+        id: this._getMax() + 1,
+        ...param
+      }
+    ];
+  }
+
+  private _getMax() {
+    return this._events.reduce((x: { id: number; }, y: { id: number; }) => x.id > y.id ? x : y).id;
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventModel } from 'src/app/shared/event-model';
 import { EventService } from 'src/app/shared/event.service';
 
@@ -11,7 +11,7 @@ import { EventService } from 'src/app/shared/event.service';
 export class EventDetailComponent implements OnInit {
   event = <any>EventModel;
 
-  constructor(private _route: ActivatedRoute, private _eventService: EventService) { }
+  constructor(private _route: ActivatedRoute, private _eventService: EventService, private _router: Router) { }
 
   ngOnInit(): void {
     const evId = +this._route.snapshot.params['id'];
@@ -26,8 +26,13 @@ export class EventDetailComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    console.log('formvalue: ', form);
-    console.log('event', this.event);
+    if (this.event.id) {
+      console.log('updateban vagyunk');
+      this._eventService.update(this.event);
+    } else {
+      console.log('create ágban vagyunk');
+      this._eventService.create(this.event);
+    }
+  this._router.navigate(['/event/list']);
   }
-
 }
