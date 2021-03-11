@@ -16,12 +16,12 @@ export class EventService {
   }
 
   getEventById(id: number) {
-    const ev = this._events.filter((x: { id: number; }) => x.id === id);
+    const ev = this._events.filter((x: { id: number; }) => x.id === +id);
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
 
   update(param: EventModel) {
-    this._events = this._events.map((ev: { id: number; }) => ev.id === param.id ? {...param} : ev);
+    this._events = this._events.map((ev: { id: number; }) => ev.id === param.id ? { ...param } : ev);
   }
 
   create(param: EventModel) {
