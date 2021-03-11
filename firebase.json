@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "dist/JegyBazar",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "index.html"
+      }
+    ]
+  }
+}

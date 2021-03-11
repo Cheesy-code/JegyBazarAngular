@@ -11,7 +11,7 @@ import { UserService } from 'src/app/shared/user.service';
 export class TicketListComponent implements OnInit {
   public tickets = <any>TicketModel
 
-  constructor(private _ticketService: TicketService, private _userService: UserService) { 
+  constructor(private _ticketService: TicketService, public userService: UserService) { 
 
   }
 
