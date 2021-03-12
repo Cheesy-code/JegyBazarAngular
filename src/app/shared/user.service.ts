@@ -16,9 +16,9 @@ export class UserService {
 
   login(email: string, password: string): boolean {
     if (email == 'angular' && password == 'angular') {
-      this._user = new UserModel(UserModel.exampleUser);
+      this._user = this._allUsers[2]
       this.isLoggedin = true;
-      this._router.navigate(['/user']);
+      return true;
     }
     console.log('be vagyunk-e lépve: ', this.isLoggedin);
     return false;
@@ -26,12 +26,17 @@ export class UserService {
 
   register(param?: UserModel) {
     if (param) {
-      this._user = new UserModel(param);
-    } else {
-      this._user = new UserModel(UserModel.exampleUser);
+      this._user = new UserModel({
+        id: 4,
+        ...param
+      });
+
+      this._allUsers = [
+        ...this._allUsers,
+        this._user
+      ];
     }
     this.isLoggedin = true;
-    this._router.navigate(["/home"]);
     console.log("Be vagyunk-e lépve:", this.isLoggedin);
   }
 
@@ -40,7 +45,10 @@ export class UserService {
     this.isLoggedin = false;
     this._router.navigate(['/home']);
     console.log('be vagyunk-e lépve: ', this.isLoggedin);
+  }
 
+  updateUser(param: UserModel) {
+    this._user = new UserModel(param);
   }
 
   getUserById(id: number) {
@@ -60,7 +68,8 @@ export class UserService {
         'email': 'legyekrekamatilda@valami.com',
         'address': 'Futrinka utca',
         'dateOfBirth': '2001.01.01',
-        'gender': 'female'
+        'gender': 'female',
+        'profilePictureUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ'
       }),
       new UserModel({
         'id': 1,
@@ -68,7 +77,8 @@ export class UserService {
         'email': 'pistaba@pistaba.com',
         'address': 'pistaba lak 12',
         'dateOfBirth': '1900-01-01',
-        'gender': 'male'
+        'gender': 'male',
+        'profilePictureUrl': 'http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg'
       }),
       new UserModel({
         'id': 2,
@@ -76,7 +86,8 @@ export class UserService {
         'email': 'marcsa@marcsa.hu',
         'address': 'marcsa var 42.',
         'dateOfBirth': '2000-01-01',
-        'gender': 'female'
+        'gender': 'female',
+        'profilePictureUrl': 'https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg'
       }),
       new UserModel({
         'id': 3,
@@ -84,7 +95,8 @@ export class UserService {
         'email': 'mzx@mzx.hu',
         'address': 'namek',
         'dateOfBirth': '2199-02-01',
-        'gender': 'satan fattya'
+        'gender': 'male',
+        'profilePictureUrl': 'https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg'
       }),
     ];
   }

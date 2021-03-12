@@ -5,7 +5,6 @@ import { EventComponent } from "./event/event.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./user/login/login.component";
 import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
-import { RegistrationComponent } from "./user/registration/registration.component";
 import { TicketComponent } from "./ticket/ticket.component";
 import { EventListComponent } from "./event/event-list/event-list.component";
 import { EventDetailComponent } from "./event/event-detail/event-detail.component";
@@ -24,7 +23,7 @@ const routes: Routes = [
     children: [
       { path: '', component: EventListComponent },
       { path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuard]},
-      { path: ':id', component: EventDetailComponent, canActivate: [LoggedInGuard]}
+      { path: ':id', component: EventDetailComponent}
     ]
   },
   {
@@ -43,7 +42,7 @@ const routes: Routes = [
       { path: '', component: ProfileComponent, canActivate: [LoggedInGuard] },
       { path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuard] },
       { path: 'login', component: LoginComponent },
-      { path: 'registration', component: RegistrationComponent }
+      { path: 'registration', component: ProfileEditComponent }
     ]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -67,7 +66,6 @@ export class AppRoutingModule {
     BidComponent,
     AboutComponent,
     LoginComponent,
-    RegistrationComponent,
     ProfileComponent,
     ProfileEditComponent,
     PageNotFoundComponent
