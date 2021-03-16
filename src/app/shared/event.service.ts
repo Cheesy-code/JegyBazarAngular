@@ -65,7 +65,7 @@ export class EventService {
         'id': 4,
         'name': 'Fezen',
         'date': '2017-08-03',
-        'pictureURL': 'http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg',
+        'pictureURL': 'https://tixa.hu/kepek/0007/7009-1_20181206160317.jpg',
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.'
       }),
       new EventModel({
@@ -79,7 +79,7 @@ export class EventService {
         'id': 6,
         'name': 'Rockmaraton',
         'date': '2017-08-03',
-        'pictureURL': 'http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg',
+        'pictureURL': 'https://rockmaraton.hu/images/rockmaraton-xxx-og-image-hu.jpg',
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.'
       }),
       new EventModel({
