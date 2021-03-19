@@ -1,8 +1,9 @@
-import { ReturnStatement } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EventService } from './event.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
+import { environment } from 'src/environments/environment';
 import { TicketModel } from './ticket-model';
-import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,31 +11,28 @@ import { UserService } from './user.service';
 export class TicketService {
   private _tickets = <any>TicketModel;
 
-  constructor(private _eventService: EventService, private _userService: UserService) {
+  constructor(private _http: HttpClient) {
     this._tickets = this._getMockData();
   }
 
-  getAllTickets() {
-    return this._tickets.map((t: { eventId: number; sellerUserId: number; }) => {
-      return {
-        ...t,
-        event: this._eventService.getEventById(t.eventId),
-        seller: this._userService.getUserById(t.sellerUserId)
-      };
-    });
+  getAllTickets(): Observable<TicketModel[]> {
+    return this._http.get(`${environment.firebase.baseURL}/tickets.json`)
+      .pipe(
+        map(data => Object.values(data).map(ticm => new TicketModel(ticm)))
+      );
   }
 
   create(param: TicketModel) {
-    this._tickets = [
-      ...this._tickets,
-      new TicketModel({
-        id: this._tickets.reduce((x: { id: number; }, y: { id: number; }) => x.id > y.id ? x : y).id + 1,
-        ...param,
-        event: this._eventService.getEventById(param.eventId),
-        seller: this._userService.getUserById(param.sellerUserId)
-      })
-    ];
-    console.log(this._tickets);
+    // this._tickets = [
+    //   ...this._tickets,
+    //   new TicketModel({
+    //     id: this._tickets.reduce((x: { id: number; }, y: { id: number; }) => x.id > y.id ? x : y).id + 1,
+    //     ...param,
+    //     event: this._eventService.getEventById(param.eventId),
+    //     seller: this._userService.getUserById(param.sellerUserId)
+    //   })
+    // ];
+    // console.log(this._tickets);
   }
 
   private _getMockData() {
