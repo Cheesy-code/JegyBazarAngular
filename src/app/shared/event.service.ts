@@ -32,11 +32,25 @@ export class EventService {
     if (param.id) { // udpate ag
       return this._http.put(`${environment.firebase.baseURL}/events/${param.id}.json`, param);
     } else { // create ag
-      return this._http.post(`${environment.firebase.baseURL}/events.json`, param);
+      return this._http.post(`${environment.firebase.baseUrl}/events.json`, param)
+        .map((fbPostReturn: { name: string }) => fbPostReturn.name)
+        .switchMap(fbId => this._http.patch(
+          `${environment.firebase.baseURL}/events/${fbId}.json`,
+          {id: fbId}
+        ));
     }
   }
 
+  // TODO: itt kitalalni, hogy hogyan akarjuk kezelni a fuggosegeket es aszerint implementalni
   delete(param: EventModel) {
     return this._http.delete(`${environment.firebase.baseURL}/events/${param.id}.json`);
+  }
+
+  addTicket(eventId: string, ticketId: string): Observable<string> {
+    return this._http.patch(
+      `${environment.firebase.baseURL}/events/${eventId}/tickets.json`,
+      {[ticketId]: true}
+    )
+      .map(rel => Object.keys(rel)[0]);
   }
 }

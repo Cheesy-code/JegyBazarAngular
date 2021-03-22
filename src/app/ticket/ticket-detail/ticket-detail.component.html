@@ -13,28 +13,28 @@
                     <label for="select">Esemény választása</label>
                     <select class="form-control" id="select" [(ngModel)]="ticket.eventId" name="eventId" required
                         #event="ngModel">
-                        <option selected hidden disabled value="0">Valassz egy esemenyt!</option>
-                        <option *ngFor="let ev of events" [value]="ev.id">
+                        <option selected hidden disabled value="">Valassz egy esemenyt!</option>
+                        <option *ngFor="let ev of events$ | async" [value]="ev.id">
                             {{ ev.name }}
                         </option>
                     </select>
-                    <alert type="danger" *ngIf="event.touched && event.pristine">Kötelező mező!
+                    <alert type="danger" *ngIf="event.touched && event.value === ''">Kötelező mező!
                     </alert>
                 </div>
 
                 <div class="form-group">
                     <label for="idopont">Időpont</label>
-                    <input type="date" class="form-control mb-3" id="idopont" placeholder="időpont"
-                        [(ngModel)]="ticket.date" name="date" required #date="ngModel">
-                    <alert type="danger" *ngIf="date.touched && date.pristine">Kötelező mező!
+                    <input type="date" class="form-control mb-3" id="idopont" placeholder="időpont" required
+                        [(ngModel)]="ticket.date" name="date" #date="ngModel">
+                    <alert type="danger" *ngIf="date.touched && date.invalid">Kötelező mező!
                     </alert>
                 </div>
 
                 <div class="form-group">
                     <label for="darab">Darabszám</label>
-                    <input type="number" class="form-control mb-3" id="darab" placeholder="darabszám"
+                    <input type="number" class="form-control mb-3" id="darab" placeholder="darabszám" required
                         [(ngModel)]="ticket.numberOfTickets" name="numberOfTickets" #numberOfTickets="ngModel">
-                    <alert type="danger" *ngIf="numberOfTickets.touched && numberOfTickets.pristine">
+                    <alert type="danger" *ngIf="numberOfTickets.touched && numberOfTickets.invalid">
                         Kötelező mező!
                     </alert>
                 </div>
@@ -44,26 +44,25 @@
                 <div class="form-group">
                     <label for="minlicit">Minimum licit érték</label>
                     <input type="number" class="form-control mb-3" id="minlicit" placeholder="Minimum licit érték"
-                        [(ngModel)]="ticket.minimalBidPrice" name="minimalBidPrice" #minimalBidPrice="ngModel">
-                    <alert type="danger" *ngIf="minimalBidPrice.touched && minimalBidPrice.pristine">
+                        required [(ngModel)]="ticket.minimalBidPrice" name="minimalBidPrice" #minimalBidPrice="ngModel">
+                    <alert type="danger" *ngIf="minimalBidPrice.touched && minimalBidPrice.invalid">
                         Kötelező mező!
                     </alert>
                 </div>
 
                 <div class="form-group">
                     <label for="lepcso">Licit lépcső érték</label>
-                    <input type="text" class="form-control mb-3" id="lepcso" placeholder="Licit lépcső érték"
+                    <input type="text" class="form-control mb-3" id="lepcso" placeholder="Licit lépcső érték" required
                         [(ngModel)]="ticket.bidStep" name="bidStep" #bidStep="ngModel">
-                    <alert type="danger" *ngIf="bidStep.touched && bidStep.pristine">Kötelező mező!
+                    <alert type="danger" *ngIf="bidStep.touched && bidStep.invalid">Kötelező mező!
                     </alert>
                 </div>
 
                 <div class="text-center mb-3">
-                    <button class="btn btn-primary btn-lg" type="submit"
-                        [disabled]="event.pristine || date.pristine || numberOfTickets.pristine || minimalBidPrice.pristine || bidStep.pristine">Licit
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="ticketForm.invalid">Licit
                         indítása
                     </button>
-                    <button class="btn btn-secondary btn-lg" type="button" routerLink="../">Mégsem</button>
+                    <button type="button" class="btn btn-secondary btn-lg" routerLink="/ticket">Mégsem</button>
                 </div>
             </form>
         </div>

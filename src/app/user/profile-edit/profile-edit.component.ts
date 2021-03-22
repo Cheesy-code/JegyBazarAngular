@@ -18,9 +18,7 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._userService.getCurrentUser()
-      .takeUntil(this._destroy$)
-      .subscribe(user => this.user = user);
+    this.user = this._userService.getCurrentUser();
   }
 
   // ezt a mintat kifejtettem az event-eknel

@@ -34,19 +34,19 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let ticket of ticketsGrouppedBy3$ | async">
+            <tr *ngFor="let ticket of tickets$ | async">
                 <td scope="row">
-                    <img [src]="tickets.event.pictureURL" width="80px" height="50px" alt="">
-                    <a [routerLink]="['/event', tickets.eventId]">
-                        {{ tickets.event.name }}
+                    <img [src]="ticket.event.pictureURL" width="80px" height="50px" alt="">
+                    <a [routerLink]="['/event', ticket.eventId]">
+                        {{ ticket.event.name }}
                     </a>
                 </td>
-                <td>{{ tickets.date }}</td>
-                <td class="d-none d-md-table-cell">{{ tickets.seller.name }}</td>
-                <td class="d-none d-md-table-cell">{{ tickets.numberOfTickets }}</td>
-                <td><a [routerLink]="['/ticket', tickets.id]">Tovább a licithez</a></td>
+                <td>{{ ticket.date }}</td>
+                <td class="d-none d-md-table-cell">{{ ticket.seller.name }}</td>
+                <td class="d-none d-md-table-cell">{{ ticket.numberOfTickets }}</td>
+                <td><a [routerLink]="['/ticket', ticket.id]">Tovább a licithez</a></td>
             </tr>
         </tbody>
     </table>
 </div>
-<!-- caontainer-end -->
+<!-- container-end -->

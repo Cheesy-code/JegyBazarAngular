@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs-compat';
 import { EventModel } from 'src/app/shared/event-model';
 import { EventService } from 'src/app/shared/event.service';
 import { TicketModel } from 'src/app/shared/ticket-model';
@@ -11,9 +12,11 @@ import { UserService } from 'src/app/shared/user.service';
   templateUrl: './ticket-detail.component.html',
   styleUrls: ['./ticket-detail.component.css']
 })
-export class TicketDetailComponent implements OnInit {
+export class TicketDetailComponent implements OnInit, OnDestroy {
   ticket = <any>TicketModel;
-  events = <any>EventModel;
+  events$!: Observable<EventModel[]>;
+
+  private _subs!: Subscription;
 
   constructor(private _ticketService: TicketService,
     private _eventService: EventService,
@@ -23,14 +26,22 @@ export class TicketDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticket = new TicketModel();
-    // this.ticket.sellerUserId = this._userService.getCurrentUser().id;
-    // this.events = this._eventService.getAllEvents();
+
+    // ez egy kerulo megoldas, hogy tudjak select-nek default uzenetet kijelezeni
+    // nem igazan szep, de tobbet most nem ert nekem a kerdes
+    this.ticket.eventId = '';
+
+    this.ticket.sellerUserId = this._userService.getCurrentUser().id;
+    this.events$ = this._eventService.getAllEvents();
+  }
+
+  ngOnDestroy() {
+    this._subs.unsubscribe();
   }
 
   onSubmit() {
     console.log(this.ticket);
-    this._ticketService.create(this.ticket);
-    this._router.navigate(['/ticket']);
+    this._subs = this._ticketService.create(this.ticket)
+      .subscribe(newTicketId => this._router.navigate(['/ticket']));
   }
-
 }

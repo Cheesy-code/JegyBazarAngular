@@ -3,15 +3,15 @@ import { EventModel } from "./event-model";
 import { UserModel } from "./user-model";
 
 export class TicketModel {
-    id: string | undefined;
-    date: string | undefined;
-    numberOfTickets: number | undefined;
-    minimalBidPrice: number | undefined;
-    bidStep: number | undefined;
-    eventId: string | undefined;
-    event: EventModel | undefined;
-    sellerUserId: string | undefined;
-    seller: UserModel | undefined;
+    id!: string;
+    date!: string;
+    numberOfTickets!: number;
+    minimalBidPrice!: number;
+    bidStep!: number;
+    eventId!: string;
+    event!: EventModel;
+    sellerUserId!: string;
+    seller!: UserModel;
 
     constructor(param?: TicketModel) {
         if (param) {

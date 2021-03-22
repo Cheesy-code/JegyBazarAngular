@@ -58,7 +58,7 @@
                             </button>
                         </ng-container>
                         <ng-template #editButtons>
-                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="eventForm.invalid">Mentés
+                            <button type="submit" class="btn btn-primary btn-lg" (click)="onSubmit()">Mentés
                             </button>
                             <button type="button" class="btn btn-danger btn-lg" (click)="delete()"
                                 *ngIf="event.id">Törlés

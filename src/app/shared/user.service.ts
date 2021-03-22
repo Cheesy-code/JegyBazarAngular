@@ -78,8 +78,12 @@ export class UserService {
     return this._http.get<UserModel>(`${environment.firebase.baseURL}/users/${fbid}.json`);
   }
 
+  // itt ezt azert tettem be igy direktbe, es nem asyncronban bekotve, mert amikor ez a valtozo valtozik
+  // azt elintezik a kezelok (login, register, logout) es igy biztosra vehetem, hogy rendben van
+  // TODO: ez iskolapeldaja lehet egyebkent egy jo kis behaviuorSubject-nek es getValue-nak
+
   getCurrentUser() {
-    return Observable.of(this._user);
+    return this._user;
   }
 
   logout() {
@@ -93,6 +97,14 @@ export class UserService {
   getAllUsers() {
     return this._http.get(`${environment.firebase.baseURL}/users.json`)
       .pipe(map(usersObject => Object.values(usersObject).map(user => new UserModel(user))));
+  }
+
+  addTicket(ticketId: string): Observable<string> {
+    return this._http.patch(
+      `${environment.firebase.baseURL}/users/${this._user.id}/tickets.json`,
+      { [ticketId]: true}
+    )
+      .map(rel => Object.keys(rel)[0]);
   }
 
   // TODO: refreshtoken-t lekezelni
