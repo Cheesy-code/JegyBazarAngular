@@ -25,7 +25,7 @@ export class EventListComponent implements OnInit {
     this.eventsGrouppedBy3$ = this._eventService.getAllEvents()
       .pipe(
         map((data: any[]) => {
-          return data.reduce((acc: EventModel[][], curr: EventModel, ind: number) => {
+          return data.reduce((acc: Array<any>, curr: EventModel, ind: number) => {
             if (ind % 3 === 0) {
               acc.push([]);
             }

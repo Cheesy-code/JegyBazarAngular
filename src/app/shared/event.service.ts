@@ -23,17 +23,15 @@ export class EventService {
       );
   }
 
-  getEventById(id: number) {
-    // const ev = this._events.filter((x: { id: number; }) => x.id === +id);
-    // return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
+  getEventById(id: string) {
     return this._http.get<EventModel>(`${environment.firebase.baseURL}/events/${id}.json`);
   }
 
   save(param: EventModel) {
     console.log(param);
-    if (param.id) {
+    if (param.id) { // udpate ag
       return this._http.put(`${environment.firebase.baseURL}/events/${param.id}.json`, param);
-    } else {
+    } else { // create ag
       return this._http.post(`${environment.firebase.baseURL}/events.json`, param);
     }
   }

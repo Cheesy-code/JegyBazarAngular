@@ -28,7 +28,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
     const evId = this._route.snapshot.params['id'];
     // ez egy megoldas arra, hogy egyben kezeljuk az edit es create funkcionalitast
     // illetve edit esetben is van mivel dolgozni amig megerkezik az adat igy user mindig lat valamit
-    this.event = new EventModel(EventModel.emptyEvent);
+    this.event = new EventModel();
     // ha nincs eventId-nk akkor ujat hozunk letre es emiatt szerkesztessel indulunk
     // ha van eventId-nk akkor viszont eloszot megjelenitunk es szerkeszt gombra valtunk
     this.viewForm = !!evId; // a !! egy dupla negalas amit arra hasznalunk, hogy fix true/false-t kapjunk barmilyen ertekbol
@@ -36,8 +36,8 @@ export class EventDetailComponent implements OnInit, OnDestroy {
     // ezt a reszt izgalmas atirni swithmap-el meg startsWith-el es nem snapshotbol dolgozni
     if (evId) {
       this._eventService.getEventById(evId)
-      .takeUntil(this._destroy$)
-      .subscribe(evm => this.event = evm);
+        .takeUntil(this._destroy$)
+        .subscribe(evm => this.event = evm);
       console.log("Megkaptuk eventId-t", evId);
     }
   }
