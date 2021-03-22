@@ -23,6 +23,7 @@
     "httpclient": "^0.1.0",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.6",
     "tslib": "^2.0.0",
     "whatwg-fetch": "^3.6.2",
     "zone.js": "~0.11.3"
