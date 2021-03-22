@@ -32,8 +32,9 @@ export class UserService {
         'returnSecureToken': true
       }).pipe(
         switchMap(fbLogin => this._http.get<UserModel>(`${environment.firebase.baseURL}/users/${fbLogin.localId}.json`))
-        ,pipe(
-          tap(user => this.isLoggedin = true)),pipe(
+        , pipe(
+          tap(user => this.isLoggedin = true))
+        , pipe(
           tap(user => this._user = user))
       );
   }

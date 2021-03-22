@@ -13,11 +13,11 @@
         </div>
         <!--card-body-->
         <div class="card-body">
-            <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+            <form #eventForm="ngForm" (ngSubmit)="onSubmit">
                 <div class="form-group">
                     <label for="esemeny">Esemény címe:</label>
                     <input type="text" id="esemeny" class="form-control mb-3" placeholder="Esemény címe" required
-                        [disabled]="!editForm" [(ngModel)]="event.name" name="name" #name="ngModel">
+                        [disabled]="viewForm" [(ngModel)]="event.name" name="name" #name="ngModel">
                     <alert type="danger" *ngIf="name.touched && name.invalid">
                         Kötelező mező!
                     </alert>
@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <label for="idopont">Esemény időpontja</label>
                     <input type="text" id="idopont" class="form-control mb-3" placeholder="Esemény időpontja" required
-                        [disabled]="!editForm" [(ngModel)]="event.date" name="date" #date="ngModel">
+                        [disabled]="viewForm" [(ngModel)]="event.date" name="date" #date="ngModel">
                     <alert type="danger" *ngIf="date.touched && date.invalid">
                         Kötelező mező!
                     </alert>
@@ -35,7 +35,7 @@
                 <div class="form-group mt-3">
                     <label for="pictureUrl">Válassz képet az eseményhez</label>
                     <input type="text" id="pictureUrl" class="form-control mb-3"
-                        placeholder="Eseményhez tartozo kep url-je" required [disabled]="!editForm"
+                        placeholder="Eseményhez tartozo kep url-je" required [disabled]="viewForm"
                         [(ngModel)]="event.pictureURL" name="picUrl" #picUrl="ngModel">
                     <alert type="danger" *ngIf="picUrl.touched && picUrl.invalid">
                         Kötelező mező!
@@ -45,20 +45,27 @@
                 <div class="form-group">
                     <label for="leiras">Esemény leírása</label>
                     <textarea id="leiras" class="form-control" placeholder="Esemény leírása" required
-                        [disabled]="!editForm" [(ngModel)]="event.description" name="description"
+                        [disabled]="viewForm" [(ngModel)]="event.description" name="description"
                         #description="ngModel"></textarea>
                     <alert type="danger" *ngIf="description.touched && description.invalid">
                         Kötelező mező!
                     </alert>
                 </div>
                 <div class="text-center mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg" *ngIf="editForm" [disabled]="eventForm.invalid"
-                        value="létrehozás">Mentes
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg" *ngIf="!editForm && userService.isLoggedin"
-                        (click)="editForm = true">Szerkesztes
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg" *ngIf="!userService.isLoggedin"
+                    <ng-container *ngIf="userService.isLoggedin">
+                        <ng-container *ngIf="viewForm; else editButtons">
+                            <button type="button" class="btn btn-primary btn-lg" (click)="viewForm = false">Szerkesztes
+                            </button>
+                        </ng-container>
+                        <ng-template #editButtons>
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="eventForm.invalid">Mentés
+                            </button>
+                            <button type="button" class="btn btn-danger btn-lg" (click)="delete()"
+                                *ngIf="event.id">Törlés
+                            </button>
+                        </ng-template>
+                    </ng-container>
+                    <button type="button" class="btn btn-primary btn-lg"
                         (click)="navigateBack()">Vissza
                     </button>
                 </div>
