@@ -9,12 +9,11 @@ import { UserService } from '../../shared/user.service';
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.css']
 })
-
 export class TicketListComponent implements OnInit {
   tickets$!: Observable<TicketModel[]>;
 
   constructor(private _ticketService: TicketService,
-    public userService: UserService) {
+              public userService: UserService) {
   }
 
   ngOnInit() {

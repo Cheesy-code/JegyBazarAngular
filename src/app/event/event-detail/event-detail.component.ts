@@ -71,7 +71,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       .takeUntil(this._destroy$)
       .subscribe(
         () => this.navigateBack(),
-        (err: any) => {
+        (err) => {
           console.warn(`Problémánk van a form mentésnél: ${err}`);
         }
       );

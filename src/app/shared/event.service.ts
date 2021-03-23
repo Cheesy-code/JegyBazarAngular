@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { EventModel } from './event-model';
-import { map } from "rxjs/operators";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,7 @@ export class EventService {
 
   getAllEvents(): Observable<EventModel[]> {
     return this._http.get(`${environment.firebase.baseURL}/events.json`)
-      .pipe(
-        map(data => Object.values(data).map(evm => new EventModel(evm)))
-      );
+      .map(data => Object.values(data).map(evm => new EventModel(evm)));
   }
 
   getEventById(id: string) {
@@ -32,12 +31,14 @@ export class EventService {
     if (param.id) { // udpate ag
       return this._http.put(`${environment.firebase.baseURL}/events/${param.id}.json`, param);
     } else { // create ag
-      return this._http.post(`${environment.firebase.baseUrl}/events.json`, param)
+      return this._http
+        .post<{ name: string }>(`${environment.firebase.baseURL}/events.json`, param)
         .map((fbPostReturn: { name: string }) => fbPostReturn.name)
         .switchMap(fbId => this._http.patch(
           `${environment.firebase.baseURL}/events/${fbId}.json`,
-          {id: fbId}
-        ));
+          { id: fbId }
+        )
+        );
     }
   }
 
@@ -49,7 +50,7 @@ export class EventService {
   addTicket(eventId: string, ticketId: string): Observable<string> {
     return this._http.patch(
       `${environment.firebase.baseURL}/events/${eventId}/tickets.json`,
-      {[ticketId]: true}
+      { [ticketId]: true }
     )
       .map(rel => Object.keys(rel)[0]);
   }

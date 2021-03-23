@@ -12,9 +12,10 @@ import { FooterComponent } from './core/footer/footer.component';
 import { EventService } from './shared/event.service';
 import { UserService } from './shared/user.service';
 import { TicketService } from './shared/ticket.service';
-import { LoggedInGuard } from './shared/logged-in.guard';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth-interceptor';
+import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,23 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [TicketService, EventService, UserService, LoggedInGuard],
+  providers: [
+    EventService,
+    UserService,
+    TicketService,
+    LoggedInGuardGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

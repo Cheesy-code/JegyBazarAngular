@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { switchMap } from 'rxjs-compat/operator/switchMap';
 import 'rxjs/add/observable/forkJoin';
+import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/zip';
-import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { EventModel } from './event-model';
@@ -96,7 +97,7 @@ export class TicketService {
   private _saveGeneratedId(ticketId: string): Observable<string> {
     return this._http.patch<{ id: string }>(
       `${environment.firebase.baseURL}/tickets/${ticketId}.json`,
-      {id: ticketId}
+      { id: ticketId }
     )
       .map(x => x.id);
   }

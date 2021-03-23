@@ -1,17 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { FirebaseLoginModel } from './firebase-login-model';
-import { UserModel } from './user-model';
-// creation and utility methods
-import { Observable, Subject, pipe } from 'rxjs';
-// operators all come from `rxjs/operators`
-import { map, takeUntil, tap, switchMap } from 'rxjs/operators';
 import { FirebaseRegistrationModel } from './firebase-registration-model';
-import 'rxjs/add/observable/of';
-
-
+import { UserModel } from './user-model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +24,10 @@ export class UserService {
 
   }
 
+  get fbIdToken(): string | null {
+    return this._fbAuthData ? this._fbAuthData.idToken : null;
+  }
+
   login(email: string, password: string): Observable<UserModel | void> {
     return this._http.post<FirebaseLoginModel>(
       `${environment.firebase.loginUrl}?key=${environment.firebase.apikey}`,
@@ -34,13 +36,12 @@ export class UserService {
         'password': password,
         'returnSecureToken': true
       })
-      .pipe(
-        tap((fbAuthResponse: FirebaseLoginModel) => this._fbAuthData = fbAuthResponse)
-        , pipe(switchMap(fbLogin => this.getUserById(fbLogin.localId)))
-        , pipe(tap(user => this._user = user))
-        , pipe(tap(user => this.isLoggedin = true))
-        , pipe(tap(user => console.log('sikeres login ezzel a userrel: ', user)))
-      );
+      .do((fbAuthResponse: FirebaseLoginModel) => this._fbAuthData = fbAuthResponse)
+      .switchMap(fbLogin => this.getUserById(fbLogin.localId))
+      .do(user => this._user = user)
+      .do(user => this.isLoggedin = true)
+      .do(user => console.log('sikeres login ezzel a userrel: ', user))
+      ;
   }
 
   register(param: UserModel, password: string) {
@@ -51,18 +52,17 @@ export class UserService {
         'password': password,
         'returnSecureToken': true
       }
-    ).pipe(
-      tap((fbAuthResponse: FirebaseRegistrationModel) => this._fbAuthData = fbAuthResponse)
-      , pipe(map(fbreg => {
+    ).do((fbAuthResponse: FirebaseRegistrationModel) => this._fbAuthData = fbAuthResponse)
+      .map(fbreg => {
         return {
-          id: fbreg.localId,
+          Id: fbreg.localId,
           ...param
         };
-      }))
-      , pipe(switchMap(user => this.save(user)))
-      , pipe(tap(user => this.isLoggedin = true))
-      , pipe(tap(user => console.log('sikeres reg ezzel a userrel: ', user)))
-    );
+      })
+      .switchMap(user => this.save(user))
+      .do(user => this.isLoggedin = true)
+      .do(user => console.log('sikeres reg ezzel a userrel: ', user))
+      ;
   }
 
   save(param: UserModel) {
@@ -71,15 +71,16 @@ export class UserService {
     // kulcs kent hasznalni adatmentesnel kulcskent az adatbazisban
     // illetve put-ra fb a bekuldott adatszerkezetet adja vissz igy tudom tovabb hasznalni
     return this._http.put<UserModel>(`${environment.firebase.baseURL}/users/${param.id}.json`, param) // return: param
-      .pipe(tap(user => this._user = user));
+      .do(user => this._user = user);
   }
+
+  // itt ezt azert tettem be igy direktbe, es nem asyncronban bekotve, mert amikor ez a valtozo valtozik
+  // azt elintezik a kezelok (login, register, logout) es igy biztosra vehetem, hogy rendben van
 
   getUserById(fbid: string) {
     return this._http.get<UserModel>(`${environment.firebase.baseURL}/users/${fbid}.json`);
   }
 
-  // itt ezt azert tettem be igy direktbe, es nem asyncronban bekotve, mert amikor ez a valtozo valtozik
-  // azt elintezik a kezelok (login, register, logout) es igy biztosra vehetem, hogy rendben van
   // TODO: ez iskolapeldaja lehet egyebkent egy jo kis behaviuorSubject-nek es getValue-nak
 
   getCurrentUser() {
@@ -96,18 +97,17 @@ export class UserService {
 
   getAllUsers() {
     return this._http.get(`${environment.firebase.baseURL}/users.json`)
-      .pipe(map(usersObject => Object.values(usersObject).map(user => new UserModel(user))));
+      .map(usersObject => Object.values(usersObject).map(user => new UserModel(user)));
   }
 
   addTicket(ticketId: string): Observable<string> {
     return this._http.patch(
       `${environment.firebase.baseURL}/users/${this._user.id}/tickets.json`,
-      { [ticketId]: true}
+      { [ticketId]: true }
     )
       .map(rel => Object.keys(rel)[0]);
   }
 
   // TODO: refreshtoken-t lekezelni
-  // TODO: auth query parameterre megirni az itnerceptort
   // TODO: rememberme-t lekezelni localstorage-el
 }
