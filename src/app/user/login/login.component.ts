@@ -9,10 +9,10 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public error: string;
+  public error?: string;
 
   constructor(private _userService: UserService,
-              private _router: Router) {
+    private _router: Router) {
   }
 
   ngOnInit() {
@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   clearError() {
-    delete(this.error);
+    delete(this.error)
   }
-
 }
