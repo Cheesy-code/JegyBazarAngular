@@ -5,7 +5,7 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
             "id": "-Ky0E6CbE8qAxNntn8bj",
             "name": "Téli Sziget Fesztivál",
-            "pictureURL": "http://www.fortitudemagazine.co.uk/wp-content/uploads/2017/04/sziget_og_image.jpg",
+            "pictureURL": "https://www.programturizmus.hu/media/image/big/ajanlat/kultura/koncert-zene/konnyuzene/2/660-sziget-fesztival-budapest.png",
             "tickets": {
                 "-Ky0HolLJBH3Q5uVHWZf": true,
                 "-Ky0Hz4uP2Es-j9q_Cmw": true,
@@ -31,7 +31,7 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
             "id": "-Ky0EKWDcRlYVCoRxwUy",
             "name": "Macskák Musical",
-            "pictureURL": "https://pb2.jegy.hu/imgs/system-4/program/000/016/918/macskak-original-54100.jpg",
+            "pictureURL": "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/cats-musical-stage.jpg",
             "tickets": {
                 "-KyD7wfWH_YkhGdXMrT_": true,
                 "-KyDIKpiipsNbURqp7I1": true,
@@ -58,7 +58,7 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
             "id": "-Ky0EmBImsuc6RPV0BIH",
             "name": "Rockmaraton",
-            "pictureURL": "http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg"
+            "pictureURL": "https://static.ticketportal.hu/images/podujatie/50544/orig_Rockmaraton_2019_18_20181123111120.jpg"
         },
         "-Ky0Euc2W2JkH-N8qw5z": {
             "date": "2017-08-03",
@@ -72,14 +72,14 @@
             "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
             "id": "-Ky0F3kr0eHrm5T8HgVP",
             "name": "TEDx",
-            "pictureURL": "https://i0.wp.com/www.tedxwellington.com/wp-content/uploads/2017/02/tedx-bulb.jpg"
+            "pictureURL": "https://forgatag.ro/forgatag2020/wp-content/uploads/2019/08/tedx.jpg"
         },
         "-Ky0FG-p593HsAFNPF_-": {
             "date": "2018-02-11",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
             "id": "-Ky0FG-p593HsAFNPF_-",
             "name": "ng-conf",
-            "pictureURL": "https://cdn-images-1.medium.com/max/1270/1*2j7MOWb0s5pZpQLu7d-5CQ.png"
+            "pictureURL": "https://miro.medium.com/max/1838/1*2j7MOWb0s5pZpQLu7d-5CQ.png"
         }
     },
     "tickets": {
