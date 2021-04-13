@@ -96,7 +96,6 @@ export class TicketService {
               seller: u
             };
           })
-
       );
   }
 

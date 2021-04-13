@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AlertModule, CollapseModule } from 'ngx-bootstrap';
+import { AlertModule, CollapseModule, ModalModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -17,9 +17,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-details-card.component';
 import { BiddingCardComponent } from './ticket/bidding-card/bidding-card.component';
+import { BidFormComponent } from './ticket/bid-form/bid-form.component';
 import { MomentModule } from 'angular2-moment';
 import 'moment/locale/hu';
-import { BidFormComponent } from './ticket/bid-form/bid-form.component';
+import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { BidFormComponent } from './ticket/bid-form/bid-form.component';
     ...AppRoutingModule.routableComponents,
     TicketDetailsCardComponent,
     BiddingCardComponent,
-    BidFormComponent
+    BidFormComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

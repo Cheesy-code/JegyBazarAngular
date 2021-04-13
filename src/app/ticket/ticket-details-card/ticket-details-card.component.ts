@@ -7,5 +7,5 @@ import { TicketModel } from '../../shared/ticket-model';
   styleUrls: ['./ticket-details-card.component.css']
 })
 export class TicketDetailsCardComponent {
-  @Input() ticket: TicketModel;
+  @Input() ticket: TicketModel;  
 }
