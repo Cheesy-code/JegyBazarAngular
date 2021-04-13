@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "jegybazar-27302"
+    "default": "jegybazar-3d12d",
+    "jegybazar": "jegybazar-3d12d"
   }
 }

@@ -39,6 +39,7 @@ export class UserService {
       .do(user => this._user = user)
       .do(user => this.isLoggedin = true)
       .do(user => console.log('sikeres login ezzel a userrel: ', user));
+      
   }
 
   register(param: UserModel, password: string) {
@@ -53,8 +54,9 @@ export class UserService {
       .do((fbAuthResponse: FirebaseRegistrationModel) => this._fbAuthData = fbAuthResponse)
       .map(fbreg => {
         return {
-          idd: fbreg.localId,
-          ...param
+          ...param,
+          id: fbreg.localId
+          // ...param
         };
       })
       .switchMap(user => this.save(user))
