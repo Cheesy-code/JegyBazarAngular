@@ -12,7 +12,7 @@ import { EventService } from './shared/event.service';
 import { UserService } from './shared/user.service';
 import { TicketService } from './shared/ticket.service';
 import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth-interceptor';
 import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-details-card.component';
@@ -39,6 +39,7 @@ import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     AppRoutingModule,
