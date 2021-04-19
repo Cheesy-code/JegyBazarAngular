@@ -15,7 +15,7 @@ export class BidComponent implements OnInit {
 
   constructor(private _ticketService: TicketService,
     userService: UserService, private _route: ActivatedRoute, private _router: Router) {
-    this.isLoggedIn = userService.isLoggedin;
+    this.isLoggedIn = true; //userService.isLoggedin;
   }
 
   ngOnInit() {

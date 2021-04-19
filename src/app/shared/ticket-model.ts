@@ -5,12 +5,12 @@ export class TicketModel {
   id: string;
   numberOfTickets: number;
   minimalBidPrice: number;
-  bidStep: number;
+  bidStep!: number;
   eventId: string;
   event: EventModel;
   sellerUserId: string;
   seller: UserModel;
-  currentBid: number;
+  currentBid!: number;
   bidCounter: number;
   bidEndDate: number;
   details: string;
