@@ -22,6 +22,8 @@ import { MomentModule } from 'angular2-moment';
 import 'moment/locale/hu';
 import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.component';
 import { BidService } from './shared/bid.service';
+import firebase from 'firebase';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -62,4 +64,7 @@ import { BidService } from './shared/bid.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor() {
+    firebase.initializeApp(environment.firebase);
+  }
 }
