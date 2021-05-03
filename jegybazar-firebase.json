@@ -1,0 +1,82 @@
+{
+    "-Ky0CVPDvbJmmeyAggMr": {
+        "address": "Futrinka utca",
+        "dateOfBirth": "2001.01.01",
+        "email": "legyekrekamatilda@valami.com",
+        "gender": "female",
+        "id": "-Ky0CVPDvbJmmeyAggMr",
+        "name": "Legyek Réka Matlida",
+        "profilePictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
+    },
+    "-Ky0CctiCtXXqcrDxJw9": {
+        "address": "pistaba lak 12",
+        "dateOfBirth": "1900-01-01",
+        "email": "pistaba@pistaba.com",
+        "gender": "male",
+        "id": "-Ky0CctiCtXXqcrDxJw9",
+        "name": "Pista ba",
+        "profilePictureUrl": "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg",
+        "tickets": {
+            "-KyD7wfWH_YkhGdXMrT_": true,
+            "-KyDIKpiipsNbURqp7I1": true,
+            "-KyDIlIXLvabUclJ5UFe": true,
+            "-KyDKCS3MAEwOK3pLIkQ": true
+        }
+    },
+    "-Ky0CqiDVsXAbshfMZ6H": {
+        "address": "marcsa var 42.",
+        "dateOfBirth": "2000-01-01",
+        "email": "marcsa@marcsa.hu",
+        "gender": "female",
+        "id": "-Ky0CqiDVsXAbshfMZ6H",
+        "name": "Marcsa",
+        "profilePictureUrl": "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
+    },
+    "-Ky0D91XU3sLX9JHISVW": {
+        "address": "namek",
+        "dateOfBirth": "2199-02-01",
+        "email": "mzx@mzx.hu",
+        "gender": "male",
+        "id": "-Ky0D91XU3sLX9JHISVW",
+        "name": "ifju satan",
+        "profilePictureUrl": "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
+    },
+    "BVMZSCDFy9QgR8LLyap7pSuVmVs1": {
+        "address": "sadfas",
+        "dateOfBirth": "2017-11-16",
+        "email": "sdfas@sadfasd.hu",
+        "id": "BVMZSCDFy9QgR8LLyap7pSuVmVs1",
+        "name": "sadfas",
+        "profilePictureUrl": "https://i.ytimg.com/vi/LRPFrqKJwQ4/maxresdefault.jpg"
+    },
+    "W1PZbksNI5OjYSwHqdxDbh0mBHw1": {
+        "address": "Érd, Szalonka utca 23",
+        "dateOfBirth": "1996-10-26",
+        "email": "norbi.sajtos@windowslive.com",
+        "gender": "male",
+        "id": "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
+        "name": "Sajtos Norbert",
+        "profilePictureUrl": "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/",
+        "tickets": {
+            "-Ky0HolLJBH3Q5uVHWZf": true,
+            "-Ky0Hz4uP2Es-j9q_Cmw": true,
+            "-Ky0I4C7RzhYJGKP_PAH": true,
+            "-Ky0IZDTNtGAjytLjtoM": true
+        }
+    },
+    "zPJyaboAnqaRH848qgCgUNKwwu43": {
+        "address": "futrinka utca",
+        "dateOfBirth": "2017-11-21",
+        "email": "test@elek.hu",
+        "gender": "male",
+        "id": "zPJyaboAnqaRH848qgCgUNKwwu43",
+        "name": "Aang The Last Air Bender",
+        "profilePictureUrl": "https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k_400x400.jpg",
+        "tickets": {
+            "-Ky0Ik33L4iyTllI2kFe": true,
+            "-Ky0Iqc3wHhZjgnkC9n0": true,
+            "-KyD3zWEtC90890iewMj": true,
+            "-KyD7bJu42h0DVnPg06h": true
+        }
+    }
+}
