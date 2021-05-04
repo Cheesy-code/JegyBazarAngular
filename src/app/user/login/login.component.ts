@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   login(email: string, password: string) {
     this._userService.login(email, password).subscribe(
-      (user: UserModel) => {
+      (user) => { //: UserModel
         this._router.navigate(['/user']);
       },
       err => console.warn('hibara futottunk a logincmp-ben', err)
