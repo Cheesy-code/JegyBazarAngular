@@ -13,7 +13,7 @@ export class TicketListComponent implements OnInit {
   tickets$: Observable<TicketModel[]>;
 
   constructor(private _ticketService: TicketService,
-    public userService: UserService) {
+              public userService: UserService) {
   }
 
   ngOnInit() {

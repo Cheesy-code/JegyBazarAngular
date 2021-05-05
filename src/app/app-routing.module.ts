@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MomentModule } from 'angular2-moment';
-import { ModalModule } from 'ngx-bootstrap';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';

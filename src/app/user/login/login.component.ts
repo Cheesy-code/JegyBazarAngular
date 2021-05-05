@@ -9,10 +9,10 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public error?: string;
+  public error: string;
 
   constructor(private _userService: UserService,
-    private _router: Router) {
+              private _router: Router) {
   }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   login(email: string, password: string) {
     this._userService.login(email, password).subscribe(
-      (user) => { //: UserModel
+      (user: UserModel) => {
         this._router.navigate(['/user']);
       },
       err => console.warn('hibara futottunk a logincmp-ben', err)
@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   clearError() {
-    delete(this.error)
+    delete(this.error);
   }
+
 }

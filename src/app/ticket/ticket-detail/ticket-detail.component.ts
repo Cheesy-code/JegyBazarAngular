@@ -19,10 +19,12 @@ export class TicketDetailComponent implements OnInit, OnDestroy {
 
   private _subs: Subscription;
 
-  constructor(private _ticketService: TicketService,
+  constructor(
+    private _ticketService: TicketService,
     private _eventService: EventService,
     private _userService: UserService,
-    private _router: Router) {
+    private _router: Router
+  ) {
   }
 
   ngOnInit() {

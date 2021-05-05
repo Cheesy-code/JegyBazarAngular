@@ -18,9 +18,11 @@ import 'rxjs/add/operator/mergeMap';
 @Injectable()
 export class TicketService {
 
-  constructor(private _eventService: EventService,
+  constructor(
+    private _eventService: EventService,
     private _userService: UserService,
-    private _http: HttpClient) {
+    private _http: HttpClient
+  ) {
   }
 
   // Mi is tortenik itt, mert izi :) - logikai lepesekkel, hogy hogyan epulunk fel
@@ -81,7 +83,6 @@ export class TicketService {
       ;
   }
 
-
   getOne(id: string): Observable<TicketModel> {
     return this._http.get<TicketModel>(`${environment.firebase.baseUrl}/tickets/${id}.json`)
       .flatMap(
@@ -90,11 +91,7 @@ export class TicketService {
           this._eventService.getEventById(ticket.eventId),
           this._userService.getUserById(ticket.sellerUserId),
           (t: TicketModel, e: EventModel, u: UserModel) => {
-            return {
-              ...t,
-              event: e,
-              seller: u
-            };
+            return t.setEvent(e).setSeller(u);
           })
       );
   }

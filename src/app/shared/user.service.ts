@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-// import firebase = require('firebase');
-import * as firebase from 'firebase';
-import { ReplaySubject } from 'rxjs';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
@@ -12,7 +9,10 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { FirebaseRegistrationModel } from './firebase-registration-model';
 import { UserModel } from './user-model';
-// import fromPromise from 'rxjs/add/observable/fromPromise';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import * as firebase from 'firebase';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class UserService {
@@ -21,9 +21,11 @@ export class UserService {
   private _user = new ReplaySubject<UserModel>(1);
   private _fbAuthData: any;
 
-  constructor(private _router: Router,
-    private _http: HttpClient) {
-    firebase.default.auth().onAuthStateChanged(
+  constructor(
+    private _router: Router,
+    private _http: HttpClient
+  ) {
+    firebase.auth().onAuthStateChanged(
       user => {
         if (user != null) {
           this._fbAuthData = user;
@@ -42,9 +44,8 @@ export class UserService {
     return this._fbAuthData ? this._fbAuthData.idToken : null;
   }
 
-  login(email: string, password: string) {  //: Observable<UserModel | void>
-    return Observable.fromPromise(firebase.default.auth().signInWithEmailAndPassword(email, password));
-
+  login(email: string, password: string): Observable<UserModel | void> {
+    return Observable.fromPromise(firebase.auth().signInWithEmailAndPassword(email, password));
   }
 
   register(param: UserModel, password: string) {
@@ -59,9 +60,8 @@ export class UserService {
       .do((fbAuthResponse: FirebaseRegistrationModel) => this._fbAuthData = fbAuthResponse)
       .map(fbreg => {
         return {
-          ...param,
-          id: fbreg.localId
-          // ...param
+          id: fbreg.localId,
+          ...param
         };
       })
       .switchMap(user => this.save(user))
@@ -88,7 +88,7 @@ export class UserService {
   }
 
   logout() {
-    firebase.default.auth().signOut();
+    firebase.auth().signOut();
     this._router.navigate(['/home']);
     console.log('kileptunk');
   }
@@ -108,8 +108,6 @@ export class UserService {
           .map(rel => Object.keys(rel)[0]);
       }
     );
-
-
   }
 
   // TODO: refreshtoken-t lekezelni

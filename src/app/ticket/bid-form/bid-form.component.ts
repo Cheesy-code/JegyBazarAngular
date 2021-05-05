@@ -3,6 +3,7 @@ import { TicketModel } from '../../shared/ticket-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { bidMinimumValidator } from './bid.validators';
 import { BidService } from '../../shared/bid.service';
+
 @Component({
   selector: 'app-bid-form',
   templateUrl: './bid-form.component.html',
@@ -21,7 +22,7 @@ export class BidFormComponent implements OnInit, OnChanges {
   constructor(
     private fb: FormBuilder,
     private bidService: BidService
-  ) { }
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['ticket'] != null
@@ -36,7 +37,15 @@ export class BidFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.form = this.fb.group(
       {
-        bid: [null, Validators.compose([Validators.required, bidMinimumValidator(() => { return this.ticket; })])]
+        bid: [
+          null,
+          Validators.compose(
+            [
+              Validators.required,
+              bidMinimumValidator(() => {return this.ticket; })
+            ]
+          )
+        ]
       }
     );
   }
@@ -59,6 +68,7 @@ export class BidFormComponent implements OnInit, OnChanges {
 
   displayBidWithStep($event: Event) {
     $event.preventDefault();
+
     this.displayBidStep = false;
   }
 
