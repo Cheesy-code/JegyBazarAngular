@@ -12,9 +12,9 @@ export class NavBarItemComponent implements DoCheck, AfterViewChecked {
   constructor() { }
 
   ngAfterViewChecked(): void {
-    console.log("NavBarItemComponent AfterViewChecked");
+    // console.log("NavBarItemComponent AfterViewChecked");
   }
   ngDoCheck(): void {
-    console.log("NavBarItemComponent DoCheck");
+    // console.log("NavBarItemComponent DoCheck");
   }
 }
