@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
-import { EventModel } from './event-model';
+import { EventModel } from '../shared/event-model';
 
 @Injectable()
 export class EventService {
@@ -30,7 +30,7 @@ export class EventService {
         .map((fbPostReturn: { name: string }) => fbPostReturn.name)
         .switchMap(fbId => this._http.patch(
           `${environment.firebase.baseUrl}/events/${fbId}.json`,
-          {id: fbId}
+          { id: fbId }
         ));
     }
   }
@@ -43,7 +43,7 @@ export class EventService {
   addTicket(eventId: string, ticketId: string): Observable<string> {
     return this._http.patch(
       `${environment.firebase.baseUrl}/events/${eventId}/tickets.json`,
-      {[ticketId]: true}
+      { [ticketId]: true }
     )
       .map(rel => Object.keys(rel)[0]);
   }

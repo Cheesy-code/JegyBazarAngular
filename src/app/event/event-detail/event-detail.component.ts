@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/takeUntil';
 import { Subject } from 'rxjs/Subject';
 import { EventModel } from '../../shared/event-model';
-import { EventService } from '../../shared/event.service';
+import { EventService } from '../event.service';
 import { UserService } from '../../shared/user.service';
 
 @Component({
@@ -20,9 +20,9 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   private _destroy$ = new Subject<void>();
 
   constructor(private _route: ActivatedRoute,
-              private _eventService: EventService,
-              private _location: Location,
-              public userService: UserService) {
+    private _eventService: EventService,
+    private _location: Location,
+    public userService: UserService) {
   }
 
   ngOnInit() {

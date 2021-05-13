@@ -5,9 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { EventService } from './shared/event.service';
 import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 import { TicketService } from './shared/ticket.service';
 import { UserService } from './shared/user.service';
@@ -21,6 +19,7 @@ import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
 import { EventcardModule } from './event/eventcard/eventcard.module';
 import { CoreModule } from './core/core.module';
+import { EventModule } from './event/event.module';
 
 @NgModule({
   declarations: [
@@ -40,10 +39,10 @@ import { CoreModule } from './core/core.module';
     HttpClientModule,
     MomentModule,
     EventcardModule,
-    CoreModule
+    CoreModule,
+    EventModule.forRoot()
   ],
   providers: [
-    EventService,
     UserService,
     TicketService,
     LoggedInGuardGuard,
