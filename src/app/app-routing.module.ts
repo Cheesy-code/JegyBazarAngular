@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: ':id', component: BidComponent },
     ]
   },
-  { path: 'about', component: AboutComponent },
+  {path: 'about', loadChildren: 'app/about/about.module#AboutModule'},
   {
     path: 'user',
     children: [
@@ -50,7 +50,6 @@ export class AppRoutingModule {
     TicketListComponent,
     TicketDetailComponent,
     BidComponent,
-    AboutComponent,
     LoginComponent,
     ProfileComponent,
     ProfileEditComponent,
