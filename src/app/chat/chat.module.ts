@@ -6,6 +6,8 @@ import { environment } from '../../environments/environment';
 import { MockedChatService } from './mocked-chat.service';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from '../core/core.module';
+import { ChatMessageRowComponent } from './chat-message-row/chat-message-row.component';
 
 export const chatServiceProvideFactoryFN = (userService: UserService) => {
   return environment.production ? new ChatService(userService) : new MockedChatService(userService);
@@ -14,9 +16,10 @@ export const chatServiceProvideFactoryFN = (userService: UserService) => {
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ],
-  declarations: [ChatWindowComponent],
+  declarations: [ChatWindowComponent, ChatMessageRowComponent],
   exports: [ChatWindowComponent]
 })
 
