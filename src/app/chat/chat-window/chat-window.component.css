@@ -6,8 +6,7 @@
     max-height: 450px;
     position: fixed;
     bottom: 4px;
-    /* TODO replace to right */
-    left: 4px;
+    right: 4px;
     z-index: 9999;
 }
 

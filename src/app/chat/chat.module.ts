@@ -8,6 +8,8 @@ import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { ChatMessageRowComponent } from './chat-message-row/chat-message-row.component';
+import { ChatMessageSendFormComponent } from './chat-message-send-form/chat-message-send-form.component';
+import { MomentModule } from 'angular2-moment';
 
 export const chatServiceProvideFactoryFN = (userService: UserService) => {
   return environment.production ? new ChatService(userService) : new MockedChatService(userService);
@@ -17,9 +19,10 @@ export const chatServiceProvideFactoryFN = (userService: UserService) => {
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    MomentModule
   ],
-  declarations: [ChatWindowComponent, ChatMessageRowComponent],
+  declarations: [ChatWindowComponent, ChatMessageRowComponent, ChatMessageSendFormComponent],
   exports: [ChatWindowComponent]
 })
 
