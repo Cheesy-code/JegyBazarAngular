@@ -3,8 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { UserService } from '../shared/user.service';
 import { ChatService } from './chat.service';
 import { ChatMessageModel } from './model/chat.model';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/delay';
+// import 'rxjs/add/observable/of';
+// import 'rxjs/add/observable/delay';
 
 @Injectable()
 export class MockedChatService extends ChatService {

@@ -4,6 +4,7 @@ import { ChatService } from './chat.service';
 import { UserService } from '../shared/user.service';
 import { environment } from '../../environments/environment';
 import { MockedChatService } from './mocked-chat.service';
+import { ChatWindowComponent } from './chat-window/chat-window.component';
 
 export const chatServiceProvideFactoryFN = (userService: UserService) => {
   return environment.production ? new ChatService(userService) : new MockedChatService(userService);
@@ -13,7 +14,8 @@ export const chatServiceProvideFactoryFN = (userService: UserService) => {
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [ChatWindowComponent],
+  exports: [ChatWindowComponent]
 })
 
 export class ChatModule {
