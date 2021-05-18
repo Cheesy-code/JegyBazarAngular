@@ -11,6 +11,8 @@
             </div>
         </div>
     </div>
+    <!-- ToDo: when remove mocked chat service -->
+    <app-chat-window *ngIf="isLoggedIn$ | async"></app-chat-window>
 </ng-container>
 <ng-template #loading>
     <app-loading-spinner></app-loading-spinner>

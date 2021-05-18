@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { MockedChatDatas } from '../mocked-chat.service';
 import { Observable } from 'rxjs/Observable';
@@ -8,7 +8,8 @@ import { ChatService } from '../chat.service';
 @Component({
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
-  styleUrls: ['./chat-window.component.css']
+  styleUrls: ['./chat-window.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatWindowComponent implements OnInit, AfterViewChecked {
   @Input() roomId = environment.production ? null : MockedChatDatas.mockedRoomId;
@@ -42,5 +43,9 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
           }
         }
       );
+  }
+
+  trackByMessages(index: number, model: ChatMessageModel) {
+    return model.$id;
   }
 }
