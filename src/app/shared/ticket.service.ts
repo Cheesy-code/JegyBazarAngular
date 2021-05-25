@@ -29,7 +29,7 @@ export class TicketService {
     return this.afDb.list('tickets')
       .map(ticketsArray => ticketsArray.map(ticket =>
         Observable.zip(
-          Observable.of(ticket),
+          Observable.of(new TicketModel(ticket)),
           this._eventService.getEventById(ticket.eventId),
           this._userService.getUserById(ticket.sellerUserId),
           (t: TicketModel, e: EventModel, u: UserModel) => {
@@ -65,7 +65,7 @@ export class TicketService {
       .flatMap(
         ticketFirebaseRemoteModel => {
           return Observable.combineLatest(
-            Observable.of(ticketFirebaseRemoteModel),
+            Observable.of(new TicketModel(ticketFirebaseRemoteModel)),
             this._eventService.getEventById(ticketFirebaseRemoteModel.eventId),
             this._userService.getUserById(ticketFirebaseRemoteModel.sellerUserId),
             (t: TicketModel, e: EventModel, u: UserModel) => {
