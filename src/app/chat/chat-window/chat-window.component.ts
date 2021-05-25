@@ -16,9 +16,9 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
   @ViewChild('cardBody') cardBody: ElementRef;
-  @HostBinding('style.height') height = '10%';
+  @HostBinding('style.height') height = '100%';
   private shouldScrolling = true;
-  public isCollapse = false;
+  public isCollapse = true;
 
   constructor(private chatService: ChatService) { }
 
