@@ -15,11 +15,7 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EventListComponent implements OnInit, AfterViewInit {
-  // ez jo pelda lehet smart es dumb componentre
-  public eventsGrouppedBy3: EventModel[];
   public events$: Observable<EventModel[]>;
-  public events: EventModel[];
-  public eventsGrouppedBy3$: Observable<EventModel[][]>;
   @ViewChild('searchInput') searchInput: ElementRef;
   private filteredText$ = new BehaviorSubject<string>(null);
 
@@ -47,7 +43,7 @@ export class EventListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.eventsGrouppedBy3$ = this._eventService.getAllEvents()
+    this.events$ = this._eventService.getAllEvents()
       .flatMap(
         events => {
           return this.filteredText$.map(
@@ -65,15 +61,6 @@ export class EventListComponent implements OnInit, AfterViewInit {
           );
         }
       )
-      .map(data => {
-        return data.reduce((acc: Array<any>, curr: EventModel, ind: number) => {
-          if (ind % 3 === 0) {
-            acc.push([]);
-          }
-          acc[acc.length - 1].push(curr);
-          return acc;
-        }, []);
-      });
   }
 }
 

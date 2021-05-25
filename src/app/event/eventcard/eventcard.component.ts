@@ -29,7 +29,7 @@ export class EventcardComponent implements OnChanges, AfterViewInit {
         this.cdr.detectChanges();
       } else if (prev.date !== current.date) {
         this.cdr.detectChanges();
-      } else if (prev.id !== current.id) {
+      } else if (prev.$id !== current.$id) {
         this.cdr.detectChanges();
       }
     }
