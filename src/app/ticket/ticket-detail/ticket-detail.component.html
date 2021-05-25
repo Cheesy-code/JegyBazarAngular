@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label for="idopont">Időpont</label>
-                    <input type="date" class="form-control mb-3" id="idopont" placeholder="időpont" required [(ngModel)]="ticket.date" name="date" #date="ngModel">
+                    <input type="date" class="form-control mb-3" id="idopont" placeholder="időpont" required [(ngModel)]="ticket.bidEndDate" name="date" #date="ngModel">
                     <alert type="danger" *ngIf="date.touched && date.invalid">Kötelező mező!
                     </alert>
                 </div>
