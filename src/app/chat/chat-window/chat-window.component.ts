@@ -1,7 +1,23 @@
-import { AfterViewChecked, ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewChecked,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
+import 'rxjs/add/operator/skip';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from '../model/chat.model';
 import { ChatService } from '../chat.service';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/delay';
 
 
 @Component({
@@ -12,13 +28,18 @@ import { ChatService } from '../chat.service';
   providers: [ChatService]
 })
 export class ChatWindowComponent implements OnInit, AfterViewChecked {
+  @Input() id: string;
   @Input() roomId //= environment.production ? null : MockedChatDatas.mockedRoomId;
+  @Input() title: string;
+  @Input() closeable: boolean = false;
+  @Output() close = new EventEmitter<void>();
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
   @ViewChild('cardBody') cardBody: ElementRef;
   @HostBinding('style.height') height = '100%';
   private shouldScrolling = true;
-  public isCollapse = true;
+  // public isCollapse = true;
+  collapseBody: boolean;
 
   constructor(private chatService: ChatService) { }
 
@@ -31,6 +52,12 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.chatMessage$ = this.chatService.getRoomMessages(this.roomId);
+    this.chatMessage$.first().delay(300).subscribe(
+      () => {
+        this.shouldScrolling = true;
+        this.ngAfterViewChecked();
+      }
+    );
   }
 
   onNewMessage(newMessage: string) {
@@ -51,11 +78,16 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
     return model.$id;
   }
   collapseChat() {
-    this.isCollapse = !this.isCollapse;
-    if (this.isCollapse) {
-      this.height = '100%';
+    this.collapseBody = !this.collapseBody;
+    if (this.collapseBody) {
+      this.height = null;
     } else {
-      this.height = '10%';
+      this.height = '100%';
     }
   }
+
+  // closeWindow() {
+  //   this.close.emit();
+  // }
+
 }
