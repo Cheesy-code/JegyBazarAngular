@@ -6,6 +6,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import 'rxjs/add/operator/switchMap';
 import * as moment from 'moment';
 import 'rxjs/add/operator/map';
+import { ChatFriendModel } from './model/chat-friend.model';
+import 'rxjs/add/operator/first';
 
 @Injectable()
 export class ChatService {
@@ -53,4 +55,20 @@ export class ChatService {
           )
       );
   }
+
+  getMyFriendList(): Observable<ChatFriendModel[]> {
+    return this.userService.getCurrentUser()
+      .first()
+      .switchMap(
+        user => {
+          return this.afDb.list(`chat_friend_list/${user.id}`)
+            .map(
+              friends => friends.map(
+                friend => new ChatFriendModel({ $id: friend.$key })
+              )
+            );
+        }
+      );
+  }
+
 }
