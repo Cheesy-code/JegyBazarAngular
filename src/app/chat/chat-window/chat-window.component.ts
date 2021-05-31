@@ -32,13 +32,13 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   @Input() roomId //= environment.production ? null : MockedChatDatas.mockedRoomId;
   @Input() title: string;
   @Input() closeable: boolean = false;
+  @Input() @HostBinding('class.floating') floating = true;
   @Output() close = new EventEmitter<void>();
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
   @ViewChild('cardBody') cardBody: ElementRef;
   @HostBinding('style.height') height = '100%';
   private shouldScrolling = true;
-  // public isCollapse = true;
   collapseBody: boolean;
 
   constructor(private chatService: ChatService) { }
@@ -86,8 +86,8 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  // closeWindow() {
-  //   this.close.emit();
-  // }
+  closeWindow() {
+    this.close.emit();
+  }
 
 }
