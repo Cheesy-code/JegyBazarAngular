@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { title } from 'process';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { UserService } from '../../shared/user.service';
 import { ChatService } from '../chat.service';
 import { ChatWindowConfig } from '../model/chat-window.config';
 
@@ -16,8 +18,8 @@ export class ChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.openChat({ title: 'test ablak', roomId: 'testelo' });
-    this.openChat({ title: 'test ablak', roomId: 'testelo2' });
+    // this.openChat({ title: 'test ablak', roomId: 'testelo' });
+    // this.openChat({ title: 'test ablak', roomId: 'testelo2' });
   }
 
   openChat(config: ChatWindowConfig) {

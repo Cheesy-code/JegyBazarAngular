@@ -13,25 +13,28 @@ import 'rxjs/add/operator/first';
 export class ChatService {
   private static PATH = 'chat';
 
-  constructor(protected userService: UserService, @Optional() protected afDb?: AngularFireDatabase) { }
+  constructor(
+    protected userService: UserService,
+    @Optional() protected afDb?: AngularFireDatabase
+  ) { }
 
   addMessage(roomId: string, msg: string): Observable<boolean> {
     return this.userService.getCurrentUser()
-      .switchMap(user => {
-        return new Observable<boolean>(
-          observer => {
-            const room = this.afDb.list(`${ChatService.PATH}/${roomId}`);
-            room.push(
-              new ChatMessageModel({
-                $id: null,
-                'msg': msg,
-                userId: user.id,
-                userName: user.name,
-                userPictureUrl: user.profilePictureUrl,
-                created: moment().unix()
-              })
-            )
-              .then(
+      .switchMap(
+        user => {
+          return new Observable<boolean>(
+            observer => {
+              const room = this.afDb.list(`${ChatService.PATH}/${roomId}`);
+              room.push(
+                new ChatMessageModel({
+                  $id: null,
+                  'msg': msg,
+                  userId: user.id,
+                  userName: user.name,
+                  userPictureUrl: user.profilePictureUrl,
+                  created: moment().unix()
+                })
+              ).then(
                 () => {
                   observer.next(true);
                   observer.complete();
@@ -42,8 +45,10 @@ export class ChatService {
                   observer.complete();
                 }
               );
-          })
-      });
+            }
+          );
+        }
+      );
   }
 
   getRoomMessages(roomId: string): Observable<ChatMessageModel[]> {
@@ -51,7 +56,8 @@ export class ChatService {
       .map(
         list =>
           list.map(
-            chatMessage => new ChatMessageModel(Object.assign(chatMessage, { $id: chatMessage.key }))
+            chatMessage =>
+              new ChatMessageModel(Object.assign(chatMessage, { $id: chatMessage.$key }))
           )
       );
   }
@@ -63,12 +69,12 @@ export class ChatService {
         user => {
           return this.afDb.list(`chat_friend_list/${user.id}`)
             .map(
-              friends => friends.map(
-                friend => new ChatFriendModel(Object.assign(friend, { $id: friend.$key }))
-              )
+              friends =>
+                friends.map(
+                  friend => new ChatFriendModel(Object.assign(friend, { $id: friend.$key }))
+                )
             );
         }
       );
   }
-
 }

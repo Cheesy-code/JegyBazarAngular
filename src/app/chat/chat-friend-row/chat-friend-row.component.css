@@ -1,13 +1,12 @@
 :host {
     display: list-item;
     width: 100%;
-  
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    /* margin-bottom: 10px;
+    padding-bottom: 5px; */
     border-bottom: 1px dotted #B3A9A9;
-    padding: 8px;
+    /* padding: 8px; */
     padding: 1em;
-    cursor: pointer !important;
+    cursor: pointer !important; 
 }
 
 :host(.focused) {
