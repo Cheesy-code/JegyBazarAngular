@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, HostBinding, HostListener, Input } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 import { ChatFriendModel } from '../model/chat-friend.model';
 import { Subject } from 'rxjs/Subject';
 
@@ -12,6 +12,7 @@ export class ChatFriendRowComponent implements AfterViewInit {
   @HostBinding('class.clearFix') classClearFix = true;
   @HostBinding('class.text-muted') classTextMuted = true;
   @HostBinding('class.focused') classFocused = false;
+  @Output() select = new EventEmitter<ChatFriendModel>();
   private focus$ = new Subject<boolean>();
 
   constructor(private cdr: ChangeDetectorRef) {
@@ -51,7 +52,7 @@ export class ChatFriendRowComponent implements AfterViewInit {
     $event.stopPropagation();
     $event.preventDefault();
 
-    console.log('click');
+    this.select.emit(this.friend);
   }
 
 }

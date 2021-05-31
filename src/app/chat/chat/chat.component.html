@@ -2,5 +2,6 @@
     <app-chat-window *ngFor="let config of windows$ |async" [id]="config.id" [roomId]="config.roomId"
         [title]="config.title" [closeable]="config.closeable" [floating]="false" (close)="removeChat(config.id)"
         class="col-sm col-md-3 align-self-end"></app-chat-window>
-    <app-chat-firend-list class="col-sm col-md-2 align-self-end ml-auto"></app-chat-firend-list>
+    <app-chat-firend-list class="col-sm col-md-2 align-self-end ml-auto" (select)="onSelectFriend($event)">
+    </app-chat-firend-list>
 </div>
