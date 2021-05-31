@@ -64,7 +64,7 @@ export class ChatService {
           return this.afDb.list(`chat_friend_list/${user.id}`)
             .map(
               friends => friends.map(
-                friend => new ChatFriendModel({ $id: friend.$key })
+                friend => new ChatFriendModel(Object.assign(friend, { $id: friend.$key }))
               )
             );
         }
