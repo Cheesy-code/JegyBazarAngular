@@ -1,25 +1,52 @@
 :host {
-    display: list-item;
-    width: 100%;
-    /* margin-bottom: 10px;
-    padding-bottom: 5px; */
-    border-bottom: 1px dotted #B3A9A9;
-    /* padding: 8px; */
-    padding: 1em;
-    cursor: pointer !important; 
+  display: list-item;
+  width: 100%;
+  border-bottom: 1px dotted #B3A9A9;
+  padding: 1em;
+  cursor: pointer !important;
 }
-
 :host(.focused) {
   background-color: RGBA(192, 192, 192, 0.5);
-  }
-  
-  .user-image {
-    width: 48px;
-    height: 48px;
-    background-color: transparent;
-  }
-  
-  strong {
-    margin-left: 60px;
-    display: block;
-  }
+}
+.user-image {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+}
+strong {
+  margin-left: 60px;
+  display: block;
+}
+
+:host(.is-online) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
+
+:host(.is-maybe-online) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
+
+:host(.is-offline) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
