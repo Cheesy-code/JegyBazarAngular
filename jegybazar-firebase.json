@@ -1,547 +1,313 @@
 {
-    "bids" : {
-      "-Ky0HolLJBH3Q5uVHWZf" : {
-        "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : 8000,
-        "mBUswvbahhRRDVfbfACIEgx3FKK2" : 15500
-      },
-      "-Ky0IZDTNtGAjytLjtoM" : {
-        "mBUswvbahhRRDVfbfACIEgx3FKK2" : 10000000000000
-      },
-      "-MYAqrnJ6x5XkHGYH81P" : {
-        "mBUswvbahhRRDVfbfACIEgx3FKK2" : 25
+  "events" : {
+    "-Ky0E6CbE8qAxNntn8bj" : {
+      "date": "2018-01-03 13:00",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0E6CbE8qAxNntn8bj",
+      "name": "Téli Sziget Fesztivál",
+      "pictureURL": "http://www.fortitudemagazine.co.uk/wp-content/uploads/2017/04/sziget_og_image.jpg",
+      "tickets": {
+        "-Ky0HolLJBH3Q5uVHWZf": true,
+        "-Ky0Hz4uP2Es-j9q_Cmw": true,
+        "-Ky0I4C7RzhYJGKP_PAH": true,
+        "-Ky0IZDTNtGAjytLjtoM": true
       }
     },
-    "chat" : {
-      "friend_list" : {
-        "aaohgEZ4M6acbmsgBT5YOlkdclI3-W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "-Mb610Wc0PI6uk5uLNhV" : {
-            "created" : 1622541867,
-            "msg" : "aaa",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        },
-        "rBK0HX2Lg2PKKYTzMesUdJPh4eE3-W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "-Mb61-oGZNZGp8zEhWFO" : {
-            "created" : 1622541864,
-            "msg" : "a",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        },
-        "testelo" : {
-          "-MagxANR-7Eohfjz0u6u" : {
-            "created" : 1622104389,
-            "msg" : "Sziasztok! próba",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagxCKOmWHtD638xioD" : {
-            "created" : 1622104397,
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagxGfrNFCDG4DIvmcM" : {
-            "created" : 1622104415,
-            "msg" : "sdaf",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagxJL9wcE44ayZCEfc" : {
-            "created" : 1622104425,
-            "msg" : "dc",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MahXIbXmu6ASLsi0PFo" : {
-            "created" : 1622114122,
-            "msg" : "asdf",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        },
-        "testelo2" : {
-          "-MahXHiF2pGaHsu34kyL" : {
-            "created" : 1622114118,
-            "msg" : "saf",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        }
-      },
-      "ticket_room" : {
-        "-Ky0HolLJBH3Q5uVHWZf" : {
-          "-Ma8t6Z-NUzeJ8RUtxui" : {
-            "created" : 1621516122,
-            "msg" : "aaa",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MaY81wvM0q_kgdewE8m" : {
-            "created" : 1621939728,
-            "msg" : "asdasd",
-            "userId" : "rBK0HX2Lg2PKKYTzMesUdJPh4eE3",
-            "userName" : "Próba reg",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MaY85Y0mgXh-y4TMlr6" : {
-            "created" : 1621939742,
-            "msg" : "asdasd",
-            "userId" : "rBK0HX2Lg2PKKYTzMesUdJPh4eE3",
-            "userName" : "Próba reg",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagNYdc_HpsbZ7EMZme" : {
-            "created" : 1622094789,
-            "msg" : "rfghjklpoiuzt",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-Magj2Re1wC3Mcnvsa_s" : {
-            "created" : 1622100686,
-            "msg" : "sdafgh",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        },
-        "-Ky0Hz4uP2Es-j9q_Cmw" : {
-          "-Ma8tM31gs4cLTisIGAl" : {
-            "created" : 1621516185,
-            "msg" : "Sziasztok! próba",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        },
-        "-Ky0IZDTNtGAjytLjtoM" : {
-          "-MagMpNapfwO103SO7wU" : {
-            "created" : 1622094599,
-            "msg" : "fgfhjk",
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagMzZXDiBt3Dagf2gH" : {
-            "created" : 1622094641,
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "-MagN-2ubrNj7lHA6sav" : {
-            "created" : 1622094643,
-            "userId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-            "userName" : "Sajtos Norbert",
-            "userPictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          }
-        }
+    "-Ky0EDGGrXHMYdns10L_" : {
+      "date": "2017-11-23 21:00",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0EDGGrXHMYdns10L_",
+      "name" : "Diótörő Balett",
+      "pictureURL": "http://www.e-jegyiroda.hu/img/diotoro-jegyek-budapest-szeged-kecskemet-balett-mese-babjatek.jpg",
+      "tickets": {
+        "-Ky0Ik33L4iyTllI2kFe": true,
+        "-Ky0Iqc3wHhZjgnkC9n0": true,
+        "-KyD3zWEtC90890iewMj": true,
+        "-KyD7bJu42h0DVnPg06h": true
       }
     },
-    "chat_friend_list" : {
-      "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-        "aaohgEZ4M6acbmsgBT5YOlkdclI3" : {
-          "name" : "probareg2",
-          "profilePictureUrl" : "https://static.marquardmedia.hu/data/cikk/188/188001.775x400.jpg"
-        },
-        "rBK0HX2Lg2PKKYTzMesUdJPh4eE3" : {
-          "name" : "Próba reg",
-          "profilePictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-        }
-      },
-      "aaohgEZ4M6acbmsgBT5YOlkdclI3" : {
-        "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "lastOnline" : 1622541847,
-          "online" : true
-        }
-      },
-      "rBK0HX2Lg2PKKYTzMesUdJPh4eE3" : {
-        "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "lastOnline" : 1622541847,
-          "online" : true
-        }
+    "-Ky0EKWDcRlYVCoRxwUy" : {
+      "date": "2018-02-11 22:00",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0EKWDcRlYVCoRxwUy",
+      "name" : "Macskák Musical",
+      "pictureURL": "https://pb2.jegy.hu/imgs/system-4/program/000/016/918/macskak-original-54100.jpg",
+      "tickets": {
+        "-KyD7wfWH_YkhGdXMrT_": true,
+        "-KyDIKpiipsNbURqp7I1": true,
+        "-KyDIlIXLvabUclJ5UFe": true,
+        "-KyDKCS3MAEwOK3pLIkQ": true
       }
     },
-    "chat_wait" : {
-      "aaohgEZ4M6acbmsgBT5YOlkdclI3" : {
-        "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "friend" : {
-            "name" : "Sajtos Norbert",
-            "online" : true,
-            "profilePictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "roomId" : "aaohgEZ4M6acbmsgBT5YOlkdclI3-W1PZbksNI5OjYSwHqdxDbh0mBHw1"
-        }
-      },
-      "rBK0HX2Lg2PKKYTzMesUdJPh4eE3" : {
-        "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-          "friend" : {
-            "name" : "Sajtos Norbert",
-            "online" : true,
-            "profilePictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-          },
-          "roomId" : "rBK0HX2Lg2PKKYTzMesUdJPh4eE3-W1PZbksNI5OjYSwHqdxDbh0mBHw1"
-        }
+    "-Ky0EOBRvrSTeR2dw1zZ" : {
+      "date" : "2017-08-03",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0EOBRvrSTeR2dw1zZ",
+      "name" : "Fezen",
+      "pictureURL" : "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
+    },
+    "-Ky0EgjgM-yrJfRAa3Dr" : {
+      "date" : "2017-11-23",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0EgjgM-yrJfRAa3Dr",
+      "name" : "SZIN",
+      "pictureURL" : "https://www.koncert.hu/uploads/concerts/koncert-20140625-11470-szin_2014_2.jpg"
+    },
+    "-Ky0EmBImsuc6RPV0BIH" : {
+      "date" : "2018-02-11",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0EmBImsuc6RPV0BIH",
+      "name" : "Rockmaraton",
+      "pictureURL" : "http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg"
+    },
+    "-Ky0Euc2W2JkH-N8qw5z" : {
+      "date" : "2017-08-03",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0Euc2W2JkH-N8qw5z",
+      "name" : "Black Hat USA",
+      "pictureURL" : "https://www.blackhat.com/images/page-graphics/metatag/event-logo-us17.png"
+    },
+    "-Ky0F3kr0eHrm5T8HgVP" : {
+      "date" : "2017-11-23",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0F3kr0eHrm5T8HgVP",
+      "name" : "TEDx",
+      "pictureURL" : "https://i0.wp.com/www.tedxwellington.com/wp-content/uploads/2017/02/tedx-bulb.jpg"
+    },
+    "-Ky0FG-p593HsAFNPF_-" : {
+      "date" : "2018-02-11",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0FG-p593HsAFNPF_-",
+      "name" : "ng-conf",
+      "pictureURL" : "https://cdn-images-1.medium.com/max/1270/1*2j7MOWb0s5pZpQLu7d-5CQ.png"
+    }
+  },
+  "tickets" : {
+    "-Ky0HolLJBH3Q5uVHWZf" : {
+      "bidStep" : 500,
+      "eventId" : "-Ky0EOBRvrSTeR2dw1zZ",
+      "id" : "-Ky0HolLJBH3Q5uVHWZf",
+      "minimalBidPrice" : 2000,
+      "numberOfTickets" : 5,
+      "sellerUserId": "-Ky0CVPDvbJmmeyAggMr",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-Ky0Hz4uP2Es-j9q_Cmw" : {
+      "bidStep" : 1000,
+      "eventId" : "-Ky0E6CbE8qAxNntn8bj",
+      "id" : "-Ky0Hz4uP2Es-j9q_Cmw",
+      "minimalBidPrice" : 4000,
+      "numberOfTickets" : 4,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-Ky0I4C7RzhYJGKP_PAH" : {
+      "bidStep" : 2000,
+      "eventId" : "-Ky0EDGGrXHMYdns10L_",
+      "id" : "-Ky0I4C7RzhYJGKP_PAH",
+      "minimalBidPrice" : 5000,
+      "numberOfTickets" : 7,
+      "sellerUserId": "-Ky0CqiDVsXAbshfMZ6H",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-Ky0IZDTNtGAjytLjtoM" : {
+      "bidStep" : 1000,
+      "eventId" : "-Ky0EgjgM-yrJfRAa3Dr",
+      "id" : "-Ky0IZDTNtGAjytLjtoM",
+      "minimalBidPrice" : 10000,
+      "numberOfTickets" : 5,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-Ky0Ik33L4iyTllI2kFe" : {
+      "bidStep" : 2000,
+      "eventId" : "-Ky0Euc2W2JkH-N8qw5z",
+      "id" : "-Ky0Ik33L4iyTllI2kFe",
+      "minimalBidPrice" : 20000,
+      "numberOfTickets" : 2,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-Ky0Iqc3wHhZjgnkC9n0" : {
+      "bidStep" : 1500,
+      "eventId" : "-Ky0FG-p593HsAFNPF_-",
+      "id" : "-Ky0Iqc3wHhZjgnkC9n0",
+      "minimalBidPrice" : 15000,
+      "numberOfTickets" : 1,
+      "sellerUserId": "-Ky0D91XU3sLX9JHISVW",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyD3zWEtC90890iewMj": {
+      "bidStep": "11",
+      "eventId": "-Ky0EKWDcRlYVCoRxwUy",
+      "id": "-KyD3zWEtC90890iewMj",
+      "minimalBidPrice": 11,
+      "numberOfTickets": 11,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyD7bJu42h0DVnPg06h": {
+      "bidStep": "12",
+      "eventId": "-Ky0EgjgM-yrJfRAa3Dr",
+      "id": "-KyD7bJu42h0DVnPg06h",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 12,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyD7wfWH_YkhGdXMrT_": {
+      "bidStep": "11",
+      "eventId": "-Ky0FG-p593HsAFNPF_-",
+      "id": "-KyD7wfWH_YkhGdXMrT_",
+      "minimalBidPrice": 11,
+      "numberOfTickets": 11,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyDIKpiipsNbURqp7I1": {
+      "bidStep": "12",
+      "eventId": "-Ky0FG-p593HsAFNPF_-",
+      "id": "-KyDIKpiipsNbURqp7I1",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 1,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyDIlIXLvabUclJ5UFe": {
+      "bidStep": "1",
+      "eventId": "-Ky0EOBRvrSTeR2dw1zZ",
+      "id": "-KyDIlIXLvabUclJ5UFe",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 12,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    },
+    "-KyDKCS3MAEwOK3pLIkQ": {
+      "bidStep": "314",
+      "eventId": "-Ky0E6CbE8qAxNntn8bj",
+      "id": "-KyDKCS3MAEwOK3pLIkQ",
+      "minimalBidPrice": 314,
+      "numberOfTickets": 314,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "currentBid": 3000,
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "details": "Lorem 1518382800 ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... "
+    }
+  },
+  "users" : {
+    "-Ky0CVPDvbJmmeyAggMr" : {
+      "address" : "Futrinka utca",
+      "dateOfBirth" : "2001.01.01",
+      "email" : "legyekrekamatilda@valami.com",
+      "gender" : "female",
+      "id" : "-Ky0CVPDvbJmmeyAggMr",
+      "name" : "Legyek Réka Matlida",
+      "profilePictureUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
+    },
+    "-Ky0CctiCtXXqcrDxJw9" : {
+      "address" : "pistaba lak 12",
+      "dateOfBirth" : "1900-01-01",
+      "email" : "pistaba@pistaba.com",
+      "gender" : "male",
+      "id" : "-Ky0CctiCtXXqcrDxJw9",
+      "name" : "Pista ba",
+      "profilePictureUrl": "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg",
+      "tickets": {
+        "-KyD7wfWH_YkhGdXMrT_": true,
+        "-KyDIKpiipsNbURqp7I1": true,
+        "-KyDIlIXLvabUclJ5UFe": true,
+        "-KyDKCS3MAEwOK3pLIkQ": true
       }
     },
-    "events" : {
-      "-Ky0E6CbE8qAxNntn8bj" : {
-        "date" : "2022-01-03 13:00",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
-        "id" : "-Ky0E6CbE8qAxNntn8bj",
-        "name" : "Téli Sziget Fesztivál",
-        "pictureURL" : "https://www.programturizmus.hu/media/image/big/ajanlat/kultura/koncert-zene/konnyuzene/2/660-sziget-fesztival-budapest.png",
-        "tickets" : {
-          "-Ky0HolLJBH3Q5uVHWZf" : true,
-          "-Ky0Hz4uP2Es-j9q_Cmw" : true,
-          "-Ky0I4C7RzhYJGKP_PAH" : true,
-          "-Ky0IZDTNtGAjytLjtoM" : true
-        }
-      },
-      "-Ky0EDGGrXHMYdns10L_" : {
-        "date" : "2022-11-23 21:00",
-        "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        "id" : "-Ky0EDGGrXHMYdns10L_",
-        "name" : "Diótörő Balett",
-        "pictureURL" : "http://www.e-jegyiroda.hu/img/diotoro-jegyek-budapest-szeged-kecskemet-balett-mese-babjatek.jpg",
-        "tickets" : {
-          "-Ky0Ik33L4iyTllI2kFe" : true,
-          "-Ky0Iqc3wHhZjgnkC9n0" : true,
-          "-KyD3zWEtC90890iewMj" : true,
-          "-KyD7bJu42h0DVnPg06h" : true
-        }
-      },
-      "-Ky0EKWDcRlYVCoRxwUy" : {
-        "date" : "2018-02-11 22:00",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
-        "id" : "-Ky0EKWDcRlYVCoRxwUy",
-        "name" : "Macskák Musical",
-        "pictureURL" : "data:image/jpeg;base64,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",
-        "tickets" : {
-          "-KyD7wfWH_YkhGdXMrT_" : true,
-          "-KyDIKpiipsNbURqp7I1" : true,
-          "-KyDIlIXLvabUclJ5UFe" : true,
-          "-KyDKCS3MAEwOK3pLIkQ" : true
-        }
-      },
-      "-Ky0EOBRvrSTeR2dw1zZ" : {
-        "date" : "2017-08-03",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
-        "id" : "-Ky0EOBRvrSTeR2dw1zZ",
-        "name" : "Fezen",
-        "pictureURL" : "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
-      },
-      "-Ky0EgjgM-yrJfRAa3Dr" : {
-        "date" : "2017-11-23",
-        "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        "id" : "-Ky0EgjgM-yrJfRAa3Dr",
-        "name" : "SZIN",
-        "pictureURL" : "data:image/jpeg;base64,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"
-      },
-      "-Ky0EmBImsuc6RPV0BIH" : {
-        "date" : "2018-02-11",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
-        "id" : "-Ky0EmBImsuc6RPV0BIH",
-        "name" : "Rockmaraton",
-        "pictureURL" : "data:image/jpeg;base64,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"
-      },
-      "-Ky0Euc2W2JkH-N8qw5z" : {
-        "date" : "2017-08-03",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
-        "id" : "-Ky0Euc2W2JkH-N8qw5z",
-        "name" : "Black Hat USA",
-        "pictureURL" : "https://www.blackhat.com/images/page-graphics/metatag/event-logo-us17.png"
-      },
-      "-Ky0F3kr0eHrm5T8HgVP" : {
-        "date" : "2021-11-23",
-        "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        "id" : "-Ky0F3kr0eHrm5T8HgVP",
-        "name" : "TEDx",
-        "pictureURL" : "https://forgatag.ro/forgatag2020/wp-content/uploads/2019/08/tedx.jpg",
-        "tickets" : {
-          "-MYAqrnJ6x5XkHGYH81P" : true
-        }
-      },
-      "-Ky0FG-p593HsAFNPF_-" : {
-        "date" : "2018-02-11",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
-        "id" : "-Ky0FG-p593HsAFNPF_-",
-        "name" : "ng-conf",
-        "pictureURL" : "data:image/jpeg;base64,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"
-      },
-      "undefined" : {
-        "date" : "2021-06-05T07:49",
-        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
-        "id" : "-Ky0EOBRvrSTeR2dw1zZ",
-        "name" : "Fezen",
-        "pictureURL" : "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
+    "-Ky0CqiDVsXAbshfMZ6H" : {
+      "address" : "marcsa var 42.",
+      "dateOfBirth" : "2000-01-01",
+      "email" : "marcsa@marcsa.hu",
+      "gender" : "female",
+      "id" : "-Ky0CqiDVsXAbshfMZ6H",
+      "name" : "Marcsa",
+      "profilePictureUrl" : "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
+    },
+    "-Ky0D91XU3sLX9JHISVW" : {
+      "address" : "namek",
+      "dateOfBirth" : "2199-02-01",
+      "email" : "mzx@mzx.hu",
+      "gender" : "male",
+      "id" : "-Ky0D91XU3sLX9JHISVW",
+      "name" : "ifju satan",
+      "profilePictureUrl" : "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
+    },
+    "BVMZSCDFy9QgR8LLyap7pSuVmVs1": {
+      "address": "sadfas",
+      "dateOfBirth": "2017-11-16",
+      "email": "sdfas@sadfasd.hu",
+      "id": "BVMZSCDFy9QgR8LLyap7pSuVmVs1",
+      "name": "sadfas",
+      "profilePictureUrl": "https://i.ytimg.com/vi/LRPFrqKJwQ4/maxresdefault.jpg"
+    },
+    "mBUswvbahhRRDVfbfACIEgx3FKK2": {
+      "address" : "szeged",
+      "dateOfBirth": "2017-11-10",
+      "email" : "nagy.gergo@3pixel.hu",
+      "gender" : "male",
+      "id" : "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "name": "Nagy Gergőa",
+      "profilePictureUrl": "https://cmeimg-a.akamaihd.net/640/clsd/getty/b96e82c973184dc8945a64a19e8e2e2e",
+      "tickets": {
+        "-Ky0HolLJBH3Q5uVHWZf": true,
+        "-Ky0Hz4uP2Es-j9q_Cmw": true,
+        "-Ky0I4C7RzhYJGKP_PAH": true,
+        "-Ky0IZDTNtGAjytLjtoM": true
       }
     },
-    "tickets" : {
-      "-Ky0HolLJBH3Q5uVHWZf" : {
-        "bidCounter" : 58,
-        "bidEndDate" : 1514980800,
-        "bidStep" : 500,
-        "currentBid" : 15500,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EOBRvrSTeR2dw1zZ",
-        "id" : "-Ky0HolLJBH3Q5uVHWZf",
-        "minimalBidPrice" : 2000,
-        "numberOfTickets" : 5,
-        "sellerUserId" : "-Ky0CVPDvbJmmeyAggMr"
-      },
-      "-Ky0Hz4uP2Es-j9q_Cmw" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1514980800,
-        "bidStep" : 1000,
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0E6CbE8qAxNntn8bj",
-        "id" : "-Ky0Hz4uP2Es-j9q_Cmw",
-        "minimalBidPrice" : 4000,
-        "numberOfTickets" : 4,
-        "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
-      },
-      "-Ky0I4C7RzhYJGKP_PAH" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1514980800,
-        "bidStep" : 2000,
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EDGGrXHMYdns10L_",
-        "id" : "-Ky0I4C7RzhYJGKP_PAH",
-        "minimalBidPrice" : 5000,
-        "numberOfTickets" : 7,
-        "sellerUserId" : "-Ky0CqiDVsXAbshfMZ6H"
-      },
-      "-Ky0IZDTNtGAjytLjtoM" : {
-        "bidCounter" : 35,
-        "bidEndDate" : 1514980800,
-        "bidStep" : 1000,
-        "currentBid" : 10000000000000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EgjgM-yrJfRAa3Dr",
-        "id" : "-Ky0IZDTNtGAjytLjtoM",
-        "minimalBidPrice" : 10000,
-        "numberOfTickets" : 5,
-        "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
-      },
-      "-Ky0Ik33L4iyTllI2kFe" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1511467200,
-        "bidStep" : 2000,
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0Euc2W2JkH-N8qw5z",
-        "id" : "-Ky0Ik33L4iyTllI2kFe",
-        "minimalBidPrice" : 20000,
-        "numberOfTickets" : 2,
-        "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
-      },
-      "-Ky0Iqc3wHhZjgnkC9n0" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1511467200,
-        "bidStep" : 1500,
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0FG-p593HsAFNPF_-",
-        "id" : "-Ky0Iqc3wHhZjgnkC9n0",
-        "minimalBidPrice" : 15000,
-        "numberOfTickets" : 1,
-        "sellerUserId" : "-Ky0D91XU3sLX9JHISVW"
-      },
-      "-KyD3zWEtC90890iewMj" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1511467200,
-        "bidStep" : "11",
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EKWDcRlYVCoRxwUy",
-        "id" : "-KyD3zWEtC90890iewMj",
-        "minimalBidPrice" : 11,
-        "numberOfTickets" : 11,
-        "sellerUserId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1"
-      },
-      "-KyD7bJu42h0DVnPg06h" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1511467200,
-        "bidStep" : "12",
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EgjgM-yrJfRAa3Dr",
-        "id" : "-KyD7bJu42h0DVnPg06h",
-        "minimalBidPrice" : 12,
-        "numberOfTickets" : 12,
-        "sellerUserId" : "zPJyaboAnqaRH848qgCgUNKwwu43"
-      },
-      "-KyD7wfWH_YkhGdXMrT_" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1518382800,
-        "bidStep" : "11",
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0FG-p593HsAFNPF_-",
-        "id" : "-KyD7wfWH_YkhGdXMrT_",
-        "minimalBidPrice" : 11,
-        "numberOfTickets" : 11,
-        "sellerUserId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1"
-      },
-      "-KyDIKpiipsNbURqp7I1" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1518382800,
-        "bidStep" : "12",
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0FG-p593HsAFNPF_-",
-        "id" : "-KyDIKpiipsNbURqp7I1",
-        "minimalBidPrice" : 12,
-        "numberOfTickets" : 1,
-        "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
-      },
-      "-KyDIlIXLvabUclJ5UFe" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1518382800,
-        "bidStep" : "1",
-        "currentBid" : 3000,
-        "details" : "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0EOBRvrSTeR2dw1zZ",
-        "id" : "-KyDIlIXLvabUclJ5UFe",
-        "minimalBidPrice" : 12,
-        "numberOfTickets" : 12,
-        "sellerUserId" : "zPJyaboAnqaRH848qgCgUNKwwu43"
-      },
-      "-KyDKCS3MAEwOK3pLIkQ" : {
-        "bidCounter" : 33,
-        "bidEndDate" : 1518382800,
-        "bidStep" : "314",
-        "currentBid" : 3000,
-        "details" : "Lorem 1518382800 ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
-        "eventId" : "-Ky0E6CbE8qAxNntn8bj",
-        "id" : "-KyDKCS3MAEwOK3pLIkQ",
-        "minimalBidPrice" : 314,
-        "numberOfTickets" : 314,
-        "sellerUserId" : "-Ky0CqiDVsXAbshfMZ6H"
-      },
-      "-MYAqrnJ6x5XkHGYH81P" : {
-        "bidStep" : "5",
-        "currentBid" : "25",
-        "date" : "2021-04-16",
-        "eventId" : "-Ky0F3kr0eHrm5T8HgVP",
-        "id" : "-MYAqrnJ6x5XkHGYH81P",
-        "minimalBidPrice" : 500,
-        "numberOfTickets" : 1,
-        "sellerUserId" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1"
-      }
-    },
-    "users" : {
-      "-Ky0CVPDvbJmmeyAggMr" : {
-        "address" : "Futrinka utca",
-        "dateOfBirth" : "2001.01.01",
-        "email" : "legyekrekamatilda@valami.com",
-        "gender" : "female",
-        "id" : "-Ky0CVPDvbJmmeyAggMr",
-        "name" : "Legyek Réka Matlida",
-        "profilePictureUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
-      },
-      "-Ky0CctiCtXXqcrDxJw9" : {
-        "address" : "pistaba lak 12",
-        "dateOfBirth" : "1900-01-01",
-        "email" : "pistaba@pistaba.com",
-        "gender" : "male",
-        "id" : "-Ky0CctiCtXXqcrDxJw9",
-        "name" : "Pista ba",
-        "profilePictureUrl" : "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg",
-        "tickets" : {
-          "-KyD7wfWH_YkhGdXMrT_" : true,
-          "-KyDIKpiipsNbURqp7I1" : true,
-          "-KyDIlIXLvabUclJ5UFe" : true,
-          "-KyDKCS3MAEwOK3pLIkQ" : true
-        }
-      },
-      "-Ky0CqiDVsXAbshfMZ6H" : {
-        "address" : "marcsa var 42.",
-        "dateOfBirth" : "2000-01-01",
-        "email" : "marcsa@marcsa.hu",
-        "gender" : "female",
-        "id" : "-Ky0CqiDVsXAbshfMZ6H",
-        "name" : "Marcsa",
-        "profilePictureUrl" : "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
-      },
-      "-Ky0D91XU3sLX9JHISVW" : {
-        "address" : "namek",
-        "dateOfBirth" : "2199-02-01",
-        "email" : "mzx@mzx.hu",
-        "gender" : "male",
-        "id" : "-Ky0D91XU3sLX9JHISVW",
-        "name" : "ifju satan",
-        "profilePictureUrl" : "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
-      },
-      "BVMZSCDFy9QgR8LLyap7pSuVmVs1" : {
-        "address" : "sadfas",
-        "dateOfBirth" : "2017-11-16",
-        "email" : "sdfas@sadfasd.hu",
-        "id" : "BVMZSCDFy9QgR8LLyap7pSuVmVs1",
-        "name" : "sadfas",
-        "profilePictureUrl" : "https://i.ytimg.com/vi/LRPFrqKJwQ4/maxresdefault.jpg"
-      },
-      "W1PZbksNI5OjYSwHqdxDbh0mBHw1" : {
-        "address" : "Érd, Szalonka utca 23",
-        "dateOfBirth" : "1996-10-26",
-        "email" : "norbi.sajtos@windowslive.com",
-        "gender" : "male",
-        "id" : "W1PZbksNI5OjYSwHqdxDbh0mBHw1",
-        "name" : "Sajtos Norbert",
-        "profilePictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/",
-        "tickets" : {
-          "-Ky0HolLJBH3Q5uVHWZf" : true,
-          "-Ky0Hz4uP2Es-j9q_Cmw" : true,
-          "-Ky0I4C7RzhYJGKP_PAH" : true,
-          "-Ky0IZDTNtGAjytLjtoM" : true,
-          "-MYAqrnJ6x5XkHGYH81P" : true
-        }
-      },
-      "aaohgEZ4M6acbmsgBT5YOlkdclI3" : {
-        "address" : "probareg2",
-        "dateOfBirth" : "4444-04-20",
-        "email" : "probareg2@reg.com",
-        "gender" : "female",
-        "id" : "aaohgEZ4M6acbmsgBT5YOlkdclI3",
-        "name" : "probareg2",
-        "profilePictureUrl" : "https://static.marquardmedia.hu/data/cikk/188/188001.775x400.jpg"
-      },
-      "rBK0HX2Lg2PKKYTzMesUdJPh4eE3" : {
-        "address" : "Próba reg",
-        "dateOfBirth" : "2222-02-22",
-        "email" : "probareg@reg.com",
-        "gender" : "female",
-        "id" : "rBK0HX2Lg2PKKYTzMesUdJPh4eE3",
-        "name" : "Próba reg",
-        "profilePictureUrl" : "https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/"
-      },
-      "zPJyaboAnqaRH848qgCgUNKwwu43" : {
-        "address" : "futrinka utca",
-        "dateOfBirth" : "2017-11-21",
-        "email" : "test@elek.hu",
-        "gender" : "male",
-        "id" : "zPJyaboAnqaRH848qgCgUNKwwu43",
-        "name" : "Aang The Last Air Bender",
-        "profilePictureUrl" : "https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k_400x400.jpg",
-        "tickets" : {
-          "-Ky0Ik33L4iyTllI2kFe" : true,
-          "-Ky0Iqc3wHhZjgnkC9n0" : true,
-          "-KyD3zWEtC90890iewMj" : true,
-          "-KyD7bJu42h0DVnPg06h" : true
-        }
+    "zPJyaboAnqaRH848qgCgUNKwwu43": {
+      "address": "futrinka utca",
+      "dateOfBirth": "2017-11-21",
+      "email": "test@elek.hu",
+      "gender": "male",
+      "id": "zPJyaboAnqaRH848qgCgUNKwwu43",
+      "name": "Aang The Last Air Bender",
+      "profilePictureUrl": "https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k_400x400.jpg",
+      "tickets": {
+        "-Ky0Ik33L4iyTllI2kFe": true,
+        "-Ky0Iqc3wHhZjgnkC9n0": true,
+        "-KyD3zWEtC90890iewMj": true,
+        "-KyD7bJu42h0DVnPg06h": true
       }
     }
   }
-  
+}

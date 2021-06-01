@@ -1,11 +1,11 @@
-import { ChatFriendModel } from './chat-friend.model';
-
-export class ChatCallModel {
+export class ChatFriendModel {
   $id: string;
-  roomId: string;
-  friend: ChatFriendModel;
+  name: string;
+  profilePictureUrl: string;
+  online: boolean;
+  lastOnline: number;
 
-  constructor(data?: ChatCallModel) {
+  constructor(data?: ChatFriendModel) {
     if (data != null) {
       Object.assign(this, data);
 

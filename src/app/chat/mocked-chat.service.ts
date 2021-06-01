@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { UserService } from '../shared/user.service';
 import { ChatService } from './chat.service';
+import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from './model/chat.model';
+import { UserService } from '../shared/user.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 import * as moment from 'moment';
 
 export const MockedChatDatas = {
   mockedRoomId: '-Ky0HolLJBH3Q5uVHWZf',
-  mockedUserId: 'W1PZbksNI5OjYSwHqdxDbh0mBHw1',
-  mockedUserName: 'Sajtos Norbert',
-  mockedUserPictureUrl: 'https://steamuserimages-a.akamaihd.net/ugc/856103543882853566/80486680F34236654A9684B9E9506AD485EB4FF0/'
+  mockedUserId: 'mBUswvbahhRRDVfbfACIEgx3FKK2',
+  mockedUserName: 'Nagy Gergő',
+  mockedUserPictureUrl: 'https://cmeimg-a.akamaihd.net/640/clsd/getty/b96e82c973184dc8945a64a19e8e2e2e'
 };
 
 @Injectable()
@@ -18,15 +21,15 @@ export class MockedChatService extends ChatService {
 
   constructor(userService: UserService) {
     super(userService);
-    //fill mocked messages
+    // fill mocked messages
     const mockedMessages = [];
     for (let i = 0; i < 10; i++) {
       mockedMessages.push({
         $id: null,
-        msg: `Test message: ${i}`,
+        msg: `Test messages: ${i}`,
         userId: MockedChatDatas.mockedUserId,
         userName: MockedChatDatas.mockedUserName,
-        userPicUrl: MockedChatDatas.mockedUserPictureUrl,
+        userPictureUrl: MockedChatDatas.mockedUserPictureUrl,
         created: moment().unix()
       });
     }
@@ -48,13 +51,14 @@ export class MockedChatService extends ChatService {
             new ChatMessageModel({
               $id: null,
               'msg': msg,
-              'userId': MockedChatDatas.mockedUserId,
-              'userName': MockedChatDatas.mockedUserName,
-              'userPictureUrl': MockedChatDatas.mockedUserPictureUrl,
-              'created': moment().unix()
+              userId: MockedChatDatas.mockedUserId,
+              userName: MockedChatDatas.mockedUserName,
+              userPictureUrl: MockedChatDatas.mockedUserPictureUrl,
+              created: moment().unix()
             })
           );
           rooms[roomId].next(roomMessages);
+
           return Observable.of(true);
         }
       );
@@ -63,7 +67,7 @@ export class MockedChatService extends ChatService {
   getRoomMessages(roomId: string): Observable<ChatMessageModel[]> {
     const rooms = this.rooms$.getValue();
     if (rooms[roomId] == null) {
-      //First init room
+      // First init room
       rooms[roomId] = new BehaviorSubject<ChatMessageModel[]>([]);
       this.rooms$.next(rooms);
     }

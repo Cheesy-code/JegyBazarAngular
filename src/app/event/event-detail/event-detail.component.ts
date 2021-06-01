@@ -20,9 +20,9 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   private _destroy$ = new Subject<void>();
 
   constructor(private _route: ActivatedRoute,
-    private _eventService: EventService,
-    private _location: Location,
-    public userService: UserService) {
+              private _eventService: EventService,
+              private _location: Location,
+              public userService: UserService) {
   }
 
   ngOnInit() {

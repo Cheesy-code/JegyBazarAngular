@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
+
     CollapseModule,
     RouterModule
   ],
@@ -28,4 +29,4 @@ import { RouterModule } from '@angular/router';
     JumbotronComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {}

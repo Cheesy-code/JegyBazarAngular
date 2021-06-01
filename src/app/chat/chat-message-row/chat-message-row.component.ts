@@ -6,7 +6,6 @@ import { ChatMessageModel } from '../model/chat.model';
   templateUrl: './chat-message-row.component.html',
   styleUrls: ['./chat-message-row.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
-
 })
 export class ChatMessageRowComponent {
   @Input() msg: ChatMessageModel;

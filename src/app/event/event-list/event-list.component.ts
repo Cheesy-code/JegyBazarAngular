@@ -6,30 +6,37 @@ import { UserService } from '../../shared/user.service';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  styleUrls: ['./event-list.component.css'],
 })
-export class EventListComponent implements OnInit, AfterViewInit, OnDestroy {
+export class EventListComponent implements OnInit, OnDestroy, AfterViewInit {
   public events: EventModel[];
   isLoggedIn: boolean;
   @ViewChild('searchInput') searchInput: ElementRef;
   private filteredText$ = new BehaviorSubject<string>(null);
-  private eventSubscription: Subscription;
-  private isLoggedInSubscription: Subscription;
+  private eventsSubscription: Subscription;
+  private isLoggedInSubcription: Subscription;
 
-  constructor(private _eventService: EventService, public userService: UserService, private cdr: ChangeDetectorRef) {
-    this.isLoggedInSubscription = userService.isLoggedIn$.subscribe(
+  constructor(
+    private _eventService: EventService,
+    userService: UserService,
+    private cdr: ChangeDetectorRef
+  ) {
+    this.isLoggedInSubcription = userService.isLoggedIn$.subscribe(
       isLoggedIn => this.isLoggedIn = isLoggedIn
     );
   }
 
   ngOnDestroy(): void {
-    this.eventSubscription.unsubscribe();
-    this.isLoggedInSubscription.unsubscribe();
+    this.eventsSubscription.unsubscribe();
+    this.isLoggedInSubcription.unsubscribe();
   }
 
   ngAfterViewInit(): void {
@@ -54,7 +61,7 @@ export class EventListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.eventSubscription = this._eventService.getAllEvents()
+    this.eventsSubscription = this._eventService.getAllEvents()
       .flatMap(
         events => {
           return this.filteredText$.map(
@@ -76,6 +83,7 @@ export class EventListComponent implements OnInit, AfterViewInit, OnDestroy {
           this.events = events;
           this.cdr.detectChanges();
         }
-      )
+      );
   }
 }
+

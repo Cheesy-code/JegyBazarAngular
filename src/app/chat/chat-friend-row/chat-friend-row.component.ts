@@ -23,7 +23,7 @@ import { TimerObservable } from 'rxjs/observable/TimerObservable';
 })
 export class ChatFriendRowComponent implements OnChanges, AfterViewInit {
   @Input() friend: ChatFriendModel;
-  @HostBinding('class.clearFix') classClearFix = true;
+  @HostBinding('class.clearfix') classClearfix = true;
   @HostBinding('class.text-muted') classTextMuted = true;
   @HostBinding('class.focused') classFocused = false;
   @Output() select = new EventEmitter<ChatFriendModel>();
@@ -35,16 +35,23 @@ export class ChatFriendRowComponent implements OnChanges, AfterViewInit {
   // 5 perc masodpercekben, unix timestamp szamolashoz amikor szamoljuk hogy valoban offline-e
   private maybeTimeInSeconds = 5 * 60 * 60;
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(
+    private cdr: ChangeDetectorRef,
+  ) {
     this.focus$
       .subscribe(
         value => {
           if (value !== this.classTextMuted) {
             this.classTextMuted = value;
             this.classFocused = !value;
+
           }
         }
       );
+  }
+
+  ngAfterViewInit(): void {
+    this.cdr.detach();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -73,10 +80,6 @@ export class ChatFriendRowComponent implements OnChanges, AfterViewInit {
         }
       }
     }
-  }
-
-  ngAfterViewInit(): void {
-    this.cdr.detach();
   }
 
   @HostListener('mouseover', ['$event'])
@@ -123,5 +126,4 @@ export class ChatFriendRowComponent implements OnChanges, AfterViewInit {
     this.classIsOffline = false;
     this.cdr.markForCheck();
   }
-
 }

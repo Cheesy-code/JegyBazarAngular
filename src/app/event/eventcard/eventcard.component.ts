@@ -6,14 +6,15 @@ import { EventModel } from '../../shared/event-model';
   templateUrl: './eventcard.component.html',
   styleUrls: ['./eventcard.component.css']
 })
-export class EventcardComponent implements OnChanges, AfterViewInit {
+export class EventcardComponent implements AfterViewInit, OnChanges {
   @Input() esemeny: EventModel;
   @Input() nextLabel = 'Tovább';
 
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['nextLabel'] != null && changes['nextLabel'].isFirstChange()) {
+    if (changes['nextLabel'] != null
+      && changes['nextLabel'].isFirstChange()) {
       this.cdr.detectChanges();
     } else if (changes['esemeny'] != null) {
       const prev: EventModel = changes['esemeny'].previousValue;
@@ -38,4 +39,5 @@ export class EventcardComponent implements OnChanges, AfterViewInit {
   ngAfterViewInit(): void {
     this.cdr.detach();
   }
+
 }

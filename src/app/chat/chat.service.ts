@@ -2,7 +2,7 @@ import { Injectable, Optional } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from './model/chat.model';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import 'rxjs/add/operator/switchMap';
 import * as moment from 'moment';
 import 'rxjs/add/operator/map';
@@ -119,10 +119,9 @@ export class ChatService {
   removeWatcher(id: string) {
     this.userService.getCurrentUser()
       .first().delay(1000).subscribe(
-        user => {
-          this.afDb.object(`chat_wait/${user.id}/${id}`).remove().then();
-        }
-      )
+      user => {
+        this.afDb.object(`chat_wait/${user.id}/${id}`).remove().then();
+      }
+    )
   }
-
 }

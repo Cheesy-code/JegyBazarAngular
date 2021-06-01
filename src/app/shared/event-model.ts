@@ -10,9 +10,9 @@ export class EventModel {
     if (param) {
       Object.assign(this, param);
 
-      const $idPropertyDesctriptor = Object.getOwnPropertyDescriptor(this, '$id');
-        $idPropertyDesctriptor.enumerable = false;
-        Object.defineProperty(this, '$id', $idPropertyDesctriptor);
+      const $idPropertyDescriptior = Object.getOwnPropertyDescriptor(this, '$id');
+      $idPropertyDescriptior.enumerable = false;
+      Object.defineProperty(this, '$id', $idPropertyDescriptior);
     }
   }
 }

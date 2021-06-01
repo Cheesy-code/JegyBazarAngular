@@ -20,7 +20,6 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/delay';
 
-
 @Component({
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
@@ -28,19 +27,23 @@ import 'rxjs/add/operator/delay';
 })
 export class ChatWindowComponent implements OnInit, AfterViewChecked, AfterViewInit {
   @Input() id: string;
-  @Input() roomId //= environment.production ? null : MockedChatDatas.mockedRoomId;
+  @Input() roomId; // = environment.production ? null : MockedChatDatas.mockedRoomId;
   @Input() title: string;
-  @Input() closeable: boolean = false;
-  @Input() @HostBinding('class.floating') floating = true;
+  @Input() closeable = false;
   @Output() close = new EventEmitter<void>();
+  @Input() @HostBinding('class.floating') floating = true;
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
   @ViewChild('cardBody') cardBody: ElementRef;
   @HostBinding('style.height') height = '100%';
-  private shouldScrolling = true;
   collapseBody: boolean;
+  private shouldScrolling = false;
 
-  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef) { }
+  constructor(
+    private chatService: ChatService,
+    private cdr: ChangeDetectorRef
+  ) {
+  }
 
   ngAfterViewInit(): void {
     this.chatMessage$.subscribe(
@@ -88,6 +91,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked, AfterViewI
   trackByMessages(index: number, model: ChatMessageModel) {
     return model.$id;
   }
+
   collapseChat() {
     this.collapseBody = !this.collapseBody;
     if (this.collapseBody) {
@@ -100,5 +104,4 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked, AfterViewI
   closeWindow() {
     this.close.emit();
   }
-
 }

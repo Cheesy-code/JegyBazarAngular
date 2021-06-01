@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
 import { UserService } from './shared/user.service';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,9 @@ import { UserService } from './shared/user.service';
 export class AppComponent {
   isLoggedIn$: ReplaySubject<boolean>;
 
-  constructor(userService: UserService) {
-    this.isLoggedIn$ = userService.isLoggedIn$;
+  constructor(
+    userSerivce: UserService
+  ) {
+    this.isLoggedIn$ = userSerivce.isLoggedIn$;
   }
 }

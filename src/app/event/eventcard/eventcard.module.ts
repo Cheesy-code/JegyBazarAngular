@@ -9,10 +9,10 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
-    EventcardComponent,
+    EventcardComponent
   ],
   exports: [
     EventcardComponent
   ]
 })
-export class EventcardModule { }
+export class EventcardModule {}

@@ -40,6 +40,10 @@ export class BidComponent implements OnInit, OnDestroy {
     );
   }
 
+  onBid() {
+    this.progressRefreshTicket = true;
+  }
+
   private refreshTicket(id: string) {
     this.progressRefreshTicket = true;
     const handle404 = () => {
@@ -58,9 +62,5 @@ export class BidComponent implements OnInit, OnDestroy {
         return handle404();
       }
     );
-  }
-
-  onBid() {
-    this.progressRefreshTicket = true;
   }
 }

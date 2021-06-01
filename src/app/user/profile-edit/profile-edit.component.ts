@@ -28,7 +28,7 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
         if (user == null) {
           this.registerMode = true;
           this.user = new UserModel();
-        } 
+        }
       }
     );
   }
@@ -45,10 +45,10 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
 
   createUser(pass: string) {
     this._userService.register(this.user, pass)
-    .subscribe(
-      data => this._goToProfile(),
-      err => console.warn('Regisztrációs hiba')
-    );
+      .subscribe(
+        data => this._goToProfile(),
+        err => console.warn('regisztracio hiba: ', err)
+      );
   }
 
   private _goToProfile() {

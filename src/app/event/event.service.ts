@@ -3,7 +3,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { EventModel } from '../shared/event-model';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Injectable()
 export class EventService {
@@ -12,7 +12,7 @@ export class EventService {
   }
 
   getAllEvents(): Observable<EventModel[]> {
-    return this.afDb.list(`events`)
+    return this.afDb.list('events')
       .map(
         events =>
           events.map(event => new EventModel(Object.assign(event, { $id: event.$key })))
@@ -25,8 +25,10 @@ export class EventService {
 
   save(param: EventModel) {
     if (param.$id) {
+      // update
       return Observable.fromPromise(this.afDb.object(`events/${param.$id}`).update(param));
     } else {
+      // create
       return Observable.fromPromise(this.afDb.object(`events/${param.$id}`).set(param));
     }
   }
@@ -40,3 +42,4 @@ export class EventService {
     return Observable.fromPromise(this.afDb.list(`events/${eventId}/tickets`).push(ticketId));
   }
 }
+

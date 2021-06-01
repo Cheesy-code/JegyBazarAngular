@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 
 @Component({
@@ -8,15 +16,15 @@ import { TicketModel } from '../../shared/ticket-model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BiddingCardComponent implements OnChanges {
-
-
   @Input() ticket: TicketModel;
   @Input() isLoggedIn: Boolean;
   @Output() bid = new EventEmitter<void>();
   loading = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['ticket'] != null && !changes['ticket'].isFirstChange() && changes['ticket'].currentValue != null) {
+    if (changes['ticket'] != null
+      && !changes['ticket'].isFirstChange()
+      && changes['ticket'].currentValue != null) {
       this.loading = false;
     }
   }

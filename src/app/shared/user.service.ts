@@ -10,7 +10,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/mergeMap';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { UserInfo } from 'firebase/app';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/catch';
@@ -24,7 +24,7 @@ export class UserService {
 
   constructor(
     private _router: Router,
-    // private _http: HttpClient
+    // private _http: HttpClient,
     private afAuth: AngularFireAuth,
     private afDb: AngularFireDatabase
   ) {
@@ -32,12 +32,12 @@ export class UserService {
       user => {
         if (user != null) {
           this.userOnlineDetect(user);
+
           this.getUserById(user.uid).subscribe(remoteUser => {
             this._user.next(remoteUser);
             this.isLoggedIn$.next(true);
           });
-        }
-        else {
+        } else {
           this._user.next(null);
           this.isLoggedIn$.next(false);
         }
@@ -54,7 +54,7 @@ export class UserService {
       this.afAuth.auth.createUserWithEmailAndPassword(param.email, password)
     )
       .do(
-        (user: firebase.UserInfo) => this.save({ ...param, id: user.uid })
+        (user: UserInfo) => this.save({ ...param, id: user.uid })
       );
   }
 
@@ -83,8 +83,7 @@ export class UserService {
     return this._user.first().flatMap(
       user => {
         return this.afDb.list(`users/${user.id}/tickets`).push(ticketId);
-      }
-    )
+      });
   }
 
   // getAllUsers() {
@@ -143,5 +142,4 @@ export class UserService {
         }
       );
   }
-
 }

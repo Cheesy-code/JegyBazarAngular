@@ -6,5 +6,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./jumbotron.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class JumbotronComponent {
-}
+export class JumbotronComponent {}
+
+// implements DoCheck, AfterViewChecked {
+//
+//   ngDoCheck(): void {
+//     console.log('JumbotronComponent ngDoCheck');
+//   }
+//
+//   ngAfterViewChecked(): void {
+//     console.log('JumbotronComponent ngAfterViewChecked');
+//   }
+// }

@@ -1,4 +1,15 @@
-import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/skip';
@@ -19,16 +30,15 @@ export class ChatMessageSendFormComponent implements OnInit, OnChanges {
 
   constructor(private fb: FormBuilder) { }
 
-
   private _disabled = false;
 
-  public get disabled() {
+  get disabled(): boolean {
     return this._disabled;
   }
 
-  public set disabled(value) {
+  set disabled(value: boolean) {
     this._disabled = value;
-    if (value = true) {
+    if (value === true) {
       this.form.get('chat-message').disable();
     } else {
       this.form.get('chat-message').enable();
@@ -49,6 +59,7 @@ export class ChatMessageSendFormComponent implements OnInit, OnChanges {
     this.form = this.fb.group({
       'chat-message': [null, Validators.required]
     });
+
     this.form.get('chat-message')
       .valueChanges
       .distinctUntilChanged(

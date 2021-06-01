@@ -6,12 +6,9 @@ import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements AfterViewInit {
-
-  constructor(private cdr: ChangeDetectorRef) {
-  }
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.cdr.detach();
   }
-
 }

@@ -22,9 +22,11 @@ export class TicketListComponent implements OnInit, OnDestroy, AfterViewInit {
   private ticketsSubscription: Subscription;
   private isLoggedInSubcription: Subscription;
 
-  constructor(private _ticketService: TicketService,
-    public userService: UserService,
-    private cdr: ChangeDetectorRef) {
+  constructor(
+    private _ticketService: TicketService,
+    private cdr: ChangeDetectorRef,
+    userService: UserService
+  ) {
     this.isLoggedInSubcription = userService.isLoggedIn$.subscribe(
       isLoggedIn => this.isLoggedIn = isLoggedIn
     );
@@ -57,20 +59,19 @@ export class TicketListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.ticketsSubscription = this._ticketService.getAllTickets()
       .flatMap(
         tickets => {
-          return this.filteredText$
-            .map(
-              filterText => {
-                if (filterText === null) {
-                  return tickets
-                } else {
-                  return tickets.filter(
-                    ticket => {
-                      return ticket.event.name.toLowerCase().indexOf(filterText.toLocaleLowerCase()) > -1;
-                    }
-                  );
-                }
+          return this.filteredText$.map(
+            filterText => {
+              if (filterText === null) {
+                return tickets;
+              } else {
+                return tickets.filter(
+                  ticket => {
+                    return ticket.event.name.toLowerCase().indexOf(filterText.toLowerCase()) > -1;
+                  }
+                );
               }
-            );
+            }
+          );
         }
       )
       .subscribe(

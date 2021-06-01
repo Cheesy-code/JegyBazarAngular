@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { bidMinimumValidator } from './bid.validators';

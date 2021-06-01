@@ -1,31 +1,35 @@
 <div class="card">
-    <div class="card-header clearfix">
-        Chat
-        <button class="btn btn-light float-right" (click)="collapseChat()">
-            <i class="fa fa-caret-down" aria-hidden="true" *ngIf="!collapseBody;else showUpIcon"></i>
-            <ng-template #showUpIcon>
-                <i class="fa fa-caret-up" aria-hidden="true" *ngIf="collapseBody"></i>
-            </ng-template>
-        </button>
-    </div>
-    <div class="card-body" #cardBody *ngIf="!collapseBody">
-        <ng-container *ngIf="chatMessage$ | async as chatMessages; else loadingChat">
-            <ng-container *ngIf="chatMessages.length > 0;else notFoundMessage">
-                <ul class="chat-messages-list">
-                    <app-chat-message-row [msg]="msg" *ngFor="let msg of chatMessages;trackBy:trackByMessages">
-                    </app-chat-message-row>
-                </ul>
-            </ng-container>
-            <ng-template #notFoundMessage>
-                <strong class="text-muted">Nincs még üzenet</strong>
-            </ng-template>
-        </ng-container>
-        <ng-template #loadingChat>
-            <app-loading-spinner [loaderWidth]="100" [loaderHeight]="100"></app-loading-spinner>
-        </ng-template>
-    </div>
-    <div class="card-footer" *ngIf="!collapseBody">
-        <app-chat-message-send-form [(reset)]="resetForm" (newMessage)="onNewMessage($event)">
-        </app-chat-message-send-form>
-    </div>
+  <div class="card-header clearfix">
+    {{title}}
+    <button class="btn btn-light float-right" (click)="closeWindow()" *ngIf="closeable">
+      <i class="fa fa-close" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-light float-right" (click)="collapseChat()">
+      <i class="fa fa-caret-down" aria-hidden="true" *ngIf="!collapseBody;else showUpIcon"></i>
+      <ng-template #showUpIcon>
+        <i class="fa fa-caret-up" aria-hidden="true" *ngIf="collapseBody"></i>
+      </ng-template>
+    </button>
+  </div>
+  <div class="card-body" #cardBody *ngIf="!collapseBody">
+    <ng-container *ngIf="chatMessage$ | async as chatMessages; else loadingChat">
+      <ng-container *ngIf="chatMessages.length > 0;else notFoundMessage">
+        <ul class="chat-messages-list">
+          <app-chat-message-row [msg]="msg"
+                                *ngFor="let msg of chatMessages;trackBy:trackByMessages"></app-chat-message-row>
+        </ul>
+      </ng-container>
+      <ng-template #notFoundMessage>
+        <strong class="text-muted">Nincs még üzenet</strong>
+      </ng-template>
+    </ng-container>
+    <ng-template #loadingChat>
+      <app-loading-spinner [loaderWidth]="100" [loaderHeight]="100"></app-loading-spinner>
+    </ng-template>
+  </div>
+  <div class="card-footer" *ngIf="!collapseBody">
+    <app-chat-message-send-form
+      [(reset)]="resetForm"
+      (newMessage)="onNewMessage($event)"></app-chat-message-send-form>
+  </div>
 </div>

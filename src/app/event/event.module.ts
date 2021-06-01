@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { EventRoutingModule } from './event-routing.module';
 import { EventComponent } from './event.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FormsModule } from '@angular/forms';
-import { AlertModule } from 'ngx-bootstrap/alert';
+import { AlertModule } from 'ngx-bootstrap';
 import { EventcardModule } from './eventcard/eventcard.module';
 import { CoreModule } from '../core/core.module';
 import { EventService } from './event.service';
@@ -16,6 +16,7 @@ import { EventService } from './event.service';
     CommonModule,
     EventRoutingModule,
     FormsModule,
+
     AlertModule,
     EventcardModule,
     CoreModule
@@ -23,7 +24,7 @@ import { EventService } from './event.service';
   declarations: [
     EventComponent,
     EventListComponent,
-    EventDetailComponent,
+    EventDetailComponent
   ]
 })
 export class EventModule {
