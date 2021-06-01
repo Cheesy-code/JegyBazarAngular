@@ -1,6 +1,7 @@
 import {
   AfterViewChecked,
-  ChangeDetectionStrategy,
+  AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -23,10 +24,9 @@ import 'rxjs/add/operator/delay';
 @Component({
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
-  styleUrls: ['./chat-window.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./chat-window.component.css']
 })
-export class ChatWindowComponent implements OnInit, AfterViewChecked {
+export class ChatWindowComponent implements OnInit, AfterViewChecked, AfterViewInit {
   @Input() id: string;
   @Input() roomId //= environment.production ? null : MockedChatDatas.mockedRoomId;
   @Input() title: string;
@@ -40,7 +40,18 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   private shouldScrolling = true;
   collapseBody: boolean;
 
-  constructor(private chatService: ChatService) { }
+  constructor(private chatService: ChatService, private cdr: ChangeDetectorRef) { }
+
+  ngAfterViewInit(): void {
+    this.chatMessage$.subscribe(
+      () => {
+        this.shouldScrolling = true;
+        this.cdr.detectChanges();
+        this.ngAfterViewChecked();
+      }
+    );
+    this.cdr.detach();
+  }
 
   ngAfterViewChecked(): void {
     if (this.shouldScrolling) {
@@ -54,6 +65,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
     this.chatMessage$.first().delay(300).subscribe(
       () => {
         this.shouldScrolling = true;
+        this.cdr.detectChanges();
         this.ngAfterViewChecked();
       }
     );
@@ -64,8 +76,8 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
       .subscribe(
         resp => {
           if (resp) {
-            this.shouldScrolling = true;
             this.resetForm = true;
+            this.cdr.detectChanges();
           } else {
             alert('Hiba a chat üzenet küldése közben');
           }
