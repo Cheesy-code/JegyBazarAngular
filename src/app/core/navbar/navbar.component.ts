@@ -1,4 +1,5 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, DoCheck } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../shared/user.service';
 
 @Component({
@@ -6,13 +7,16 @@ import { UserService } from '../../shared/user.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements DoCheck, AfterViewChecked, AfterViewInit {
+export class NavbarComponent implements AfterViewInit {
   public isCollapsed = true;
   isLoggedIn = false;
+  isCollapsedLanguageSwicher = true;
+  currentLang = 'hu';
 
   constructor(
     public userService: UserService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private translateService: TranslateService
   ) {
     this.userService.isLoggedIn$.subscribe(
       isLoggedIn => {
@@ -20,22 +24,43 @@ export class NavbarComponent implements DoCheck, AfterViewChecked, AfterViewInit
         this.cdr.detectChanges();
       }
     );
+
+    translateService.onLangChange.subscribe(
+      newLang => {
+        this.currentLang = newLang.lang;
+        this.isCollapsedLanguageSwicher = true;
+        cdr.detectChanges();
+      }
+    );
+
   }
 
   ngAfterViewInit(): void {
     this.cdr.detach();
   }
 
-  ngDoCheck(): void {
-    // console.log('NavbarComponent ngDoCheck');
-  }
-
-  ngAfterViewChecked(): void {
-    // console.log('NavbarComponent ngAfterViewChecked');
-  }
-
   logout() {
     this.userService.logout();
+  }
+
+  toggleLanguageSwicher($event) {
+    $event.stopPropagation();
+    $event.preventDefault();
+
+    this.isCollapsedLanguageSwicher = !this.isCollapsedLanguageSwicher;
+    this.cdr.detectChanges();
+  }
+
+  selectLang(lang: string, $event) {
+    $event.stopPropagation();
+    $event.preventDefault();
+
+    this.translateService.use(lang);
+  }
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
+    this.cdr.detectChanges();
   }
 
 }
