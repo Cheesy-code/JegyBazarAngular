@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +15,6 @@ import { MomentModule } from 'angular2-moment';
 import 'moment/locale/hu';
 import { BidFormComponent } from './ticket/bid-form/bid-form.component';
 import { BidService } from './shared/bid.service';
-import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
 import { EventcardModule } from './event/eventcard/eventcard.module';
 import { CoreModule } from './core/core.module';
@@ -23,8 +22,14 @@ import { EventModule } from './event/event.module';
 import { ChatModule } from './chat/chat.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule } from './@angular/service-worker/src';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -50,7 +55,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
     ChatModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     UserService,
@@ -61,7 +73,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    firebase.initializeApp(environment.firebase);
+  constructor(translateService: TranslateService) {
+    translateService.setDefaultLang('hu');
+
+    translateService.use('en');
   }
 }

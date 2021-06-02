@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "local": "lite-server --baseDir='dist'",
+    "local:prod": "ng build --prod && npm run local",
+    "local:dev": "ng build --dev && npm run local"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +25,8 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@angular/service-worker": "^5.0.0",
+    "@ngx-translate/core": "^9.0.1",
+    "@ngx-translate/http-loader": "^2.0.0",
     "angular2-moment": "^1.7.0",
     "angularfire2": "^5.0.0-rc.4",
     "bootstrap": "^4.0.0-beta.2",
@@ -48,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.3.0",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",

@@ -21,6 +21,7 @@ import { forkJoin } from 'rxjs/observable/forkJoin';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { combineLatest } from 'rxjs/observable/combineLatest';
 
+
 @Injectable()
 export class TicketService {
 
