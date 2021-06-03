@@ -60,8 +60,8 @@ export class NavbarComponent implements AfterViewInit {
   }
 
   toggleMenu() {
-    this.isCollapsed = !this.isCollapsed;
     this.cdr.detectChanges();
+    return this.isCollapsed = !this.isCollapsed;
   }
 
 }
