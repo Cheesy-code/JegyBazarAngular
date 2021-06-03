@@ -17,6 +17,21 @@
         "TICKETS": "Ha sietsz, egyből kezdheted a jegyek böngészésével is. Itt is tudsz keresni az esemény neve vagy időpontja alapján.",
         "REGISTRATION": "Még nem regisztráltál? Akkor gyorsan tedd meg, mert a szolgáltatás csak tagonkak elérhető. Sőt, az újak értékes ajándékot kapnak tőlünk."
       }
+    },
+    "NAVBAR": {
+      "HOME":"Kezdőlap",
+      "EVENT":"Események",
+      "TICKET":"Jegyek",
+      "ABOUT":"Rólunk",
+      "REGISTRATION":"Regisztráció",
+      "PROFILE":"Profil",
+      "LOGOUT":"Kijelentkezés",
+      "LOGIN": "Bejelentkezés",
+      "LANGUAGES": {
+        "LAN":"Nyelv",
+        "HUN":"Magyar",
+        "ENG":"Angol"
+      }
     }
   },
   "EVENTS": {},

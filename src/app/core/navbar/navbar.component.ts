@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Output } from '@angular/core';
+import { transition } from '@angular/core/src/animation/dsl';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../shared/user.service';
 

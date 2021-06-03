@@ -17,6 +17,21 @@
         "TICKETS": "If you are in a hurry, you can start browsing tickets right away. Here you can also search by event name or time.",
         "REGISTRATION": "Not registered yet? Then do it quickly because the service is only available to our members. Moreover, the new ones receive a valuable gift from us."
       }
+    },
+    "NAVBAR": {
+      "HOME":"Home",
+      "EVENT":"Event",
+      "TICKET":"Ticket",
+      "ABOUT":"About",
+      "REGISTRATION":"Registration",
+      "PROFILE":"Profile",
+      "LOGOUT":"Logout",
+      "LOGIN":"Login",
+      "LANGUAGES": {
+        "LAN":"Language",
+        "HUN":"Hungarian",
+        "ENG":"English"
+      }
     }
   },
   "EVENTS": {},
