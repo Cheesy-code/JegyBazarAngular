@@ -2,7 +2,22 @@
   "SIMPLE": "Simple text",
   "WITHVARIABLE": "Hello {{variableValue}}",
   "APP": {
-    "TITLE": "Events bid"
+    "TITLE": "Events bid",
+    "HOME": {
+      "LABELS":{
+        "EVENTS": "Events",
+        "TICKETS": "Tickets",
+        "REGISTRATION": "Registration"
+      },
+      "DESCRIPTION": {
+        "TITLE": "Tickets from anyone, anywhere, anytime!",
+        "JUMBOTRONDESC":"Use the Jegybazár and exchange tickets for the best parties. Out of stock? Was the last one taken from your nose? Don't worry, head to Jegybazár!",
+        "EVENTSBTN": "Let's see the events!",
+        "EVENTS": "Here you will find many good parties, browse boldly and find or sell tickets to your friends or other users.",
+        "TICKETS": "If you are in a hurry, you can start browsing tickets right away. Here you can also search by event name or time.",
+        "REGISTRATION": "Not registered yet? Then do it quickly because the service is only available to our members. Moreover, the new ones receive a valuable gift from us."
+      }
+    }
   },
   "EVENTS": {},
   "TICKETS": {}
